@@ -53,10 +53,10 @@
         }
 
         html.dark-mode {
-            --text-color: #f8f9fa;
-            --bg-color: #343a40;
-            --light-color: #495057;
-            --dark-color: #212529;
+            --text-color: #f8f9fa !important;
+            --bg-color: #343a40 !important;
+            --light-color: #495057 !important;
+            --dark-color: #212529 !important;
         }
 
         body {
@@ -541,7 +541,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block">
-                        <img src="/images/market.jpg" alt="Malawi Market" class="img-fluid rounded shadow-lg animate-float" loading="lazy">
+                        <img src="/images/market.jpg" alt="Malawi Market" class="img-fluid rounded shadow-lg animate-float" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                     </div>
                 </div>
             </div>
@@ -626,7 +626,7 @@
                     <div class="col-md-6 col-lg-3" data-category="furniture">
                         <div class="card product-card h-100">
                             <div class="badge-discount">-20%</div>
-                            <img src="/images/chair.jpg" class="card-img-top" alt="Handcrafted Wooden Chair" loading="lazy">
+                            <img src="/images/chair.jpg" class="card-img-top" alt="Handcrafted Wooden Chair" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                             <div class="card-body">
                                 <h5 class="card-title">Handcrafted Wooden Chair</h5>
                                 <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Lilongwe</p>
@@ -642,7 +642,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3" data-category="art">
                         <div class="card product-card h-100">
-                            <img src="/images/basket.jpg" class="card-img-top" alt="Traditional Malawi Basket" loading="lazy">
+                            <img src="/images/basket.jpg" class="card-img-top" alt="Traditional Malawi Basket" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                             <div class="card-body">
                                 <h5 class="card-title">Traditional Malawi Basket</h5>
                                 <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Blantyre</p>
@@ -659,7 +659,7 @@
                     <div class="col-md-6 col-lg-3" data-category="electronics">
                         <div class="card product-card h-100">
                             <div class="badge-discount">New</div>
-                            <img src="/images/smartphone.jpg" class="card-img-top" alt="Second-hand Smartphone" loading="lazy">
+                            <img src="/images/smartphone.jpg" class="card-img-top" alt="Second-hand Smartphone" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                             <div class="card-body">
                                 <h5 class="card-title">Second-hand Smartphone</h5>
                                 <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Mzuzu</p>
@@ -675,7 +675,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3" data-category="jewelry">
                         <div class="card product-card h-100">
-                            <img src="/images/jewelry.jpg" class="card-img-top" alt="Handmade Jewelry Set" loading="lazy">
+                            <img src="/images/jewelry.jpg" class="card-img-top" alt="Handmade Jewelry Set" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                             <div class="card-body">
                                 <h5 class="card-title">Handmade Jewelry Set</h5>
                                 <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Zomba</p>
@@ -818,7 +818,7 @@
                                 </div>
                                 <p class="card-text">"MsikaOnline helped me sell my furniture quickly and safely. The payment process was secure and I received my money instantly through MPamba."</p>
                                 <div class="d-flex align-items-center mt-3">
-                                    <img src="/images/user1.jpg" class="rounded-circle me-3" width="50" height="50" alt="Sarah Banda" loading="lazy">
+                                    <img src="/images/user1.jpg" class="rounded-circle me-3" width="50" height="50" alt="Sarah Banda" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                                     <div>
                                         <h6 class="mb-0">Sarah Banda</h6>
                                         <small class="text-muted">Lilongwe</small>
@@ -839,7 +839,7 @@
                                 </div>
                                 <p class="card-text">"I found exactly what I was looking for at a great price. The seller was verified and the transaction was smooth. Will definitely use again!"</p>
                                 <div class="d-flex align-items-center mt-3">
-                                    <img src="/images/user2.jpg" class="rounded-circle me-3" width="50" height="50" alt="James Phiri" loading="lazy">
+                                    <img src="/images/user2.jpg" class="rounded-circle me-3" width="50" height="50" alt="James Phiri" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                                     <div>
                                         <h6 class="mb-0">James Phiri</h6>
                                         <small class="text-muted">Blantyre</small>
@@ -860,7 +860,7 @@
                                 </div>
                                 <p class="card-text">"As a small business owner, MsikaOnline has been invaluable for reaching customers across Malawi. The verification system builds trust with buyers."</p>
                                 <div class="d-flex align-items-center mt-3">
-                                    <img src="/images/user3.jpg" class="rounded-circle me-3" width="50" height="50" alt="Grace Mwale" loading="lazy">
+                                    <img src="/images/user3.jpg" class="rounded-circle me-3" width="50" height="50" alt="Grace Mwale" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                                     <div>
                                         <h6 class="mb-0">Grace Mwale</h6>
                                         <small class="text-muted">Mzuzu</small>
@@ -1136,7 +1136,7 @@
                     <div class="col-md-6 text-center text-md-end">
                         <p class="mb-0">
                             <span class="me-2">Proudly Malawian</span>
-                            <img src="/images/mw-flag.png" alt="Malawi Flag" style="height: 15px;" loading="lazy">
+                            <img src="/images/mw-flag.png" alt="Malawi Flag" style="height: 15px;" loading="lazy" onerror="this.src='/images/placeholder.jpg'">
                         </p>
                     </div>
                 </div>
@@ -1212,6 +1212,7 @@
                             '/images/user2.jpg',
                             '/images/user3.jpg',
                             '/images/mw-flag.png',
+                            '/images/placeholder.jpg',
                             'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
                             'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js',
                             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
@@ -1223,6 +1224,9 @@
                 event.respondWith(
                     caches.match(event.request).then((response) => {
                         return response || fetch(event.request).catch(() => {
+                            if (event.request.destination === 'image') {
+                                return caches.match('/images/placeholder.jpg');
+                            }
                             return caches.match('/index.html');
                         });
                     })
@@ -1248,247 +1252,326 @@
             });
         }
 
-        // Utility Functions
-        const showToast = (message, type = 'success') => {
-            const toast = document.getElementById('toastNotification');
-            if (!toast) return;
-            const toastBody = toast.querySelector('.toast-body');
-            if (toastBody) {
-                toastBody.textContent = message;
-                toast.classList.remove('bg-success', 'bg-danger');
-                toast.classList.add(`bg-${type}`);
-                const bsToast = new bootstrap.Toast(toast);
-                bsToast.show();
-            }
-        };
+        document.addEventListener('DOMContentLoaded', () => {
+            // Utility Functions
+            const showToast = (message, type = 'success') => {
+                const toast = document.getElementById('toastNotification');
+                if (!toast) return;
+                const toastBody = toast.querySelector('.toast-body');
+                if (toastBody) {
+                    toastBody.textContent = message;
+                    toast.classList.remove('bg-success', 'bg-danger');
+                    toast.classList.add(`bg-${type}`);
+                    const bsToast = new bootstrap.Toast(toast);
+                    bsToast.show();
+                }
+            };
 
-        const sanitizeInput = (input) => {
-            if (!input) return '';
-            const div = document.createElement('div');
-            div.textContent = input;
-            return div.innerHTML;
-        };
+            const sanitizeInput = (input) => {
+                if (!input) return '';
+                const div = document.createElement('div');
+                div.textContent = input;
+                return div.innerHTML;
+            };
 
-        const validateField = (input, field) => {
-            if (!input) return false;
-            const errorElement = document.getElementById(`${field.id}Error`);
-            if (!errorElement) return false;
+            const validateField = (input, field) => {
+                if (!input) return false;
+                const errorElement = document.getElementById(`${field.id}Error`);
+                if (!errorElement) return false;
 
-            const value = sanitizeInput(input.value.trim());
-            if (!value) {
-                input.classList.add('is-invalid');
-                errorElement.textContent = `${field.label} is required`;
-                return false;
-            } else if (field.validate && !field.validate(value)) {
-                input.classList.add('is-invalid');
-                errorElement.textContent = field.errorMessage;
-                return false;
-            } else {
-                input.classList.remove('is-invalid');
-                errorElement.textContent = '';
-                return true;
-            }
-        };
+                const value = sanitizeInput(input.value.trim());
+                if (!value) {
+                    input.classList.add('is-invalid');
+                    errorElement.textContent = `${field.label} is required`;
+                    return false;
+                } else if (field.validate && !field.validate(value)) {
+                    input.classList.add('is-invalid');
+                    errorElement.textContent = field.errorMessage;
+                    return false;
+                } else {
+                    input.classList.remove('is-invalid');
+                    errorElement.textContent = '';
+                    return true;
+                }
+            };
 
-        const validateForm = (formId, fields) => {
-            const form = document.getElementById(formId);
-            if (!form) return false;
+            const validateForm = (formId, fields) => {
+                const form = document.getElementById(formId);
+                if (!form) return false;
 
-            let isValid = true;
-            fields.forEach(field => {
-                const input = form.querySelector(`#${field.id}`);
-                if (!validateField(input, field)) isValid = false;
-            });
-            return isValid;
-        };
+                let isValid = true;
+                fields.forEach(field => {
+                    const input = form.querySelector(`#${field.id}`);
+                    if (!validateField(input, field)) isValid = false;
+                });
+                return isValid;
+            };
 
-        // Image Preview and Validation
-        const handleImageUpload = () => {
-            const imageUpload = document.getElementById('itemImages');
-            const imagePreview = document.getElementById('imagePreview');
-            const imageError = document.getElementById('itemImagesError');
-            if (!imageUpload || !imagePreview || !imageError) return;
-
-            imageUpload.addEventListener('change', () => {
-                imagePreview.innerHTML = '';
-                imageError.textContent = '';
-                imageUpload.classList.remove('is-invalid');
-
-                const files = Array.from(imageUpload.files);
-                if (files.length > 5) {
-                    imageUpload.classList.add('is-invalid');
-                    imageError.textContent = 'Maximum 5 images allowed';
-                    imageUpload.value = '';
-                    showToast('Maximum 5 images allowed', 'danger');
+            // Image Preview and Validation
+            const handleImageUpload = () => {
+                const imageUpload = document.getElementById('itemImages');
+                const imagePreview = document.getElementById('imagePreview');
+                const imageError = document.getElementById('itemImagesError');
+                if (!imageUpload || !imagePreview || !imageError) {
+                    console.error('Image upload elements not found');
                     return;
                 }
 
-                for (const file of files) {
-                    if (!file.type.match('image.*')) {
+                imageUpload.addEventListener('change', () => {
+                    imagePreview.innerHTML = '';
+                    imageError.textContent = '';
+                    imageUpload.classList.remove('is-invalid');
+
+                    const files = Array.from(imageUpload.files);
+                    if (files.length > 5) {
                         imageUpload.classList.add('is-invalid');
-                        imageError.textContent = 'Only image files are allowed';
+                        imageError.textContent = 'Maximum 5 images allowed';
                         imageUpload.value = '';
-                        showToast('Only image files are allowed', 'danger');
+                        showToast('Maximum 5 images allowed', 'danger');
                         return;
                     }
-                    if (file.size > 5 * 1024 * 1024) {
-                        imageUpload.classList.add('is-invalid');
-                        imageError.textContent = 'Each image must be less than 5MB';
-                        imageUpload.value = '';
-                        showToast('Each image must be less than 5MB', 'danger');
-                        return;
+
+                    for (const file of files) {
+                        if (!file.type.match('image.*')) {
+                            imageUpload.classList.add('is-invalid');
+                            imageError.textContent = 'Only image files are allowed';
+                            imageUpload.value = '';
+                            showToast('Only image files are allowed', 'danger');
+                            return;
+                        }
+                        if (file.size > 5 * 1024 * 1024) {
+                            imageUpload.classList.add('is-invalid');
+                            imageError.textContent = 'Each image must be less than 5MB';
+                            imageUpload.value = '';
+                            showToast('Each image must be less than 5MB', 'danger');
+                            return;
+                        }
+
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const img = document.createElement('img');
+                            img.src = e.target.result || '/images/placeholder.jpg';
+                            img.classList.add('img-thumbnail');
+                            img.style.width = '80px';
+                            img.style.height = '80px';
+                            img.alt = 'Uploaded product image';
+                            img.onerror = () => {
+                                img.src = '/images/placeholder.jpg';
+                            };
+                            imagePreview.appendChild(img);
+                        };
+                        reader.onerror = () => {
+                            imageUpload.classList.add('is-invalid');
+                            imageError.textContent = 'Error reading image file';
+                            showToast('Error reading image file', 'danger');
+                        };
+                        reader.readAsDataURL(file);
                     }
-
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        img.classList.add('img-thumbnail');
-                        img.style.width = '80px';
-                        img.style.height = '80px';
-                        img.alt = 'Uploaded product image';
-                        imagePreview.appendChild(img);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        };
-
-        // Password Strength
-        const handlePasswordStrength = () => {
-            const passwordInput = document.getElementById('registerPassword');
-            const strengthBar = document.getElementById('passwordStrengthBar');
-            if (!passwordInput || !strengthBar) return;
-
-            passwordInput.addEventListener('input', function () {
-                const password = this.value;
-                let strength = 0;
-
-                if (password.length >= 8) strength += 25;
-                if (password.length >= 12) strength += 25;
-                if (/[A-Z]/.test(password)) strength += 15;
-                if (/[0-9]/.test(password)) strength += 15;
-                if (/[^A-Za-z0-9]/.test(password)) strength += 20;
-
-                strengthBar.style.width = strength + '%';
-                strengthBar.style.backgroundColor = strength < 50 ? '#dc3545' : strength < 75 ? '#fd7e14' : '#28a745';
-            });
-        };
-
-        // Dark Mode Toggle
-        const handleDarkMode = () => {
-            const html = document.getElementById('html-root');
-            const toggleButton = document.getElementById('darkModeToggle');
-            if (!html || !toggleButton) return;
-
-            const savedMode = localStorage.getItem('darkMode');
-            if (savedMode === 'enabled' || (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                html.classList.add('dark-mode');
-                toggleButton.innerHTML = `<i class="fas fa-sun" aria-hidden="true"></i>`;
-            }
-
-            toggleButton.addEventListener('click', () => {
-                html.classList.toggle('dark-mode');
-                const isDark = html.classList.contains('dark-mode');
-                toggleButton.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
-                localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-            });
-        };
-
-        // Product Search and Filter
-        const handleProductSearch = () => {
-            const searchInput = document.getElementById('productSearch');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const productList = document.getElementById('productList');
-            if (!searchInput || !categoryFilter || !productList) return;
-
-            const filterProducts = () => {
-                const searchTerm = sanitizeInput(searchInput.value.toLowerCase());
-                const category = categoryFilter.value;
-                const products = productList.querySelectorAll('.col-md-6');
-
-                products.forEach(product => {
-                    const titleElement = product.querySelector('.card-title');
-                    if (!titleElement) return;
-                    const title = titleElement.textContent.toLowerCase();
-                    const productCategory = product.dataset.category;
-                    const matchesSearch = !searchTerm || title.includes(searchTerm);
-                    const matchesCategory = !category || productCategory === category;
-                    product.style.display = matchesSearch && matchesCategory ? '' : 'none';
                 });
             };
 
-            searchInput.addEventListener('input', filterProducts);
-            categoryFilter.addEventListener('change', filterProducts);
-        };
+            // Password Strength
+            const handlePasswordStrength = () => {
+                const passwordInput = document.getElementById('registerPassword');
+                const strengthBar = document.getElementById('passwordStrengthBar');
+                if (!passwordInput || !strengthBar) return;
 
-        // Cookie Consent
-        const handleCookieConsent = () => {
-            const cookieBanner = document.getElementById('cookieBanner');
-            const cookieAccept = document.getElementById('cookieAccept');
-            const cookieDecline = document.getElementById('cookieDecline');
-            if (!cookieBanner || !cookieAccept || !cookieDecline) return;
+                passwordInput.addEventListener('input', function () {
+                    const password = this.value;
+                    let strength = 0;
 
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('show');
-            }
+                    if (password.length >= 8) strength += 25;
+                    if (password.length >= 12) strength += 25;
+                    if (/[A-Z]/.test(password)) strength += 15;
+                    if (/[0-9]/.test(password)) strength += 15;
+                    if (/[^A-Za-z0-9]/.test(password)) strength += 20;
 
-            cookieAccept.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieBanner.classList.remove('show');
-                showToast('Cookies accepted');
-            });
+                    strengthBar.style.width = strength + '%';
+                    strengthBar.style.backgroundColor = strength < 50 ? '#dc3545' : strength < 75 ? '#fd7e14' : '#28a745';
+                });
+            };
 
-            cookieDecline.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'declined');
-                cookieBanner.classList.remove('show');
-                showToast('Cookies declined');
-            });
-        };
+            // Dark Mode Toggle
+            const handleDarkMode = () => {
+                const html = document.getElementById('html-root');
+                const toggleButton = document.getElementById('darkModeToggle');
+                if (!html || !toggleButton) {
+                    console.error('Dark mode elements not found');
+                    return;
+                }
 
-        // Policy Navigation
-        const handlePolicyNavigation = () => {
-            const policyLinks = document.querySelectorAll('.policy-link');
-            const mainSections = ['home', 'categories', 'browse', 'sell', 'about', 'testimonials'].map(id => document.getElementById(id));
-            const policySections = ['terms-of-service', 'privacy-policy', 'cookie-policy', 'gdpr-compliance'].map(id => document.getElementById(id));
+                // Set initial state
+                const savedMode = localStorage.getItem('darkMode');
+                if (savedMode === 'enabled' || (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    html.classList.add('dark-mode');
+                    toggleButton.innerHTML = `<i class="fas fa-sun" aria-hidden="true"></i>`;
+                } else {
+                    toggleButton.innerHTML = `<i class="fas fa-moon" aria-hidden="true"></i>`;
+                }
 
-            policyLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
+                // Toggle dark mode
+                toggleButton.addEventListener('click', () => {
+                    html.classList.toggle('dark-mode');
+                    const isDark = html.classList.contains('dark-mode');
+                    toggleButton.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
+                    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+                });
+            };
 
-                    if (targetSection) {
-                        // Hide all sections
-                        mainSections.forEach(section => {
-                            if (section) section.classList.add('d-none');
-                        });
-                        policySections.forEach(section => {
-                            if (section) section.classList.add('d-none');
-                        });
+            // Product Search and Filter
+            const handleProductSearch = () => {
+                const searchInput = document.getElementById('productSearch');
+                const categoryFilter = document.getElementById('categoryFilter');
+                const productList = document.getElementById('productList');
+                if (!searchInput || !categoryFilter || !productList) return;
 
-                        // Show target section
-                        targetSection.classList.remove('d-none');
+                const filterProducts = () => {
+                    const searchTerm = sanitizeInput(searchInput.value.toLowerCase());
+                    const category = categoryFilter.value;
+                    const products = productList.querySelectorAll('.col-md-6');
 
-                        // If navigating to home, show all main sections
-                        if (targetId === 'home') {
+                    products.forEach(product => {
+                        const titleElement = product.querySelector('.card-title');
+                        if (!titleElement) return;
+                        const title = titleElement.textContent.toLowerCase();
+                        const productCategory = product.dataset.category;
+                        const matchesSearch = !searchTerm || title.includes(searchTerm);
+                        const matchesCategory = !category || productCategory === category;
+                        product.style.display = matchesSearch && matchesCategory ? '' : 'none';
+                    });
+                };
+
+                searchInput.addEventListener('input', filterProducts);
+                categoryFilter.addEventListener('change', filterProducts);
+            };
+
+            // Cookie Consent
+            const handleCookieConsent = () => {
+                const cookieBanner = document.getElementById('cookieBanner');
+                const cookieAccept = document.getElementById('cookieAccept');
+                const cookieDecline = document.getElementById('cookieDecline');
+                if (!cookieBanner || !cookieAccept || !cookieDecline) return;
+
+                if (!localStorage.getItem('cookieConsent')) {
+                    cookieBanner.classList.add('show');
+                }
+
+                cookieAccept.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    cookieBanner.classList.remove('show');
+                    showToast('Cookies accepted');
+                });
+
+                cookieDecline.addEventListener('click', () => {
+                    localStorage.setItem('cookieConsent', 'declined');
+                    cookieBanner.classList.remove('show');
+                    showToast('Cookies declined');
+                });
+            };
+
+            // Policy Navigation
+            const handlePolicyNavigation = () => {
+                const policyLinks = document.querySelectorAll('.policy-link');
+                const mainSections = ['home', 'categories', 'browse', 'sell', 'about'].map(id => document.getElementById(id));
+                const policySections = ['terms-of-service', 'privacy-policy', 'cookie-policy', 'gdpr-compliance'].map(id => document.getElementById(id));
+
+                policyLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href').substring(1);
+                        const targetSection = document.getElementById(targetId);
+
+                        if (targetSection) {
+                            // Hide all sections
                             mainSections.forEach(section => {
-                                if (section) section.classList.remove('d-none');
+                                if (section) section.classList.add('d-none');
+                            });
+                            policySections.forEach(section => {
+                                if (section) section.classList.add('d-none');
+                            });
+
+                            // Show target section
+                            targetSection.classList.remove('d-none');
+
+                            // If navigating to home, show all main sections
+                            if (targetId === 'home') {
+                                mainSections.forEach(section => {
+                                    if (section) section.classList.remove('d-none');
+                                });
+                            }
+
+                            // Smooth scroll to target
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 70,
+                                behavior: 'smooth'
                             });
                         }
+                    });
+                });
+            };
 
-                        // Smooth scroll to target
-                        window.scrollTo({
-                            top: targetSection.offsetTop - 70,
-                            behavior: 'smooth'
-                        });
+            // Form Handlers with Real-Time Validation
+            const handleForms = () => {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const phoneRegex = /^\+?\d{10,}$/;
+                const priceRegex = /^\d+(\.\d{1,2})?$/;
+
+                // Login Form
+                const loginFields = [
+                    {
+                        id: 'loginEmail',
+                        label: 'Email or Phone',
+                        validate: (value) => emailRegex.test(value) || phoneRegex.test(value),
+                        errorMessage: 'Please enter a valid email or phone number'
+                    },
+                    {
+                        id: 'loginPassword',
+                        label: 'Password',
+                        validate: (value) => value.length >= 8,
+                        errorMessage: 'Password must be at least 8 characters'
+                    }
+                ];
+
+                document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (validateForm('loginForm', loginFields)) {
+                        showToast('Login successful', 'success');
+                        bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
                     }
                 });
-            });
-        };
 
-        // Form Handlers with Real-Time Validation
-        const handleForms = () => {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const phoneRegex = /^\+?\d{10,}$/;
-            const priceRegex = /^\d+(\.\d
+                // Register Form
+                const registerFields = [
+                    {
+                        id: 'registerName',
+                        label: 'Full Name',
+                        validate: (value) => value.length >= 2,
+                        errorMessage: 'Name must be at least 2 characters'
+                    },
+                    {
+                        id: 'registerEmail',
+                        label: 'Email',
+                        validate: (value) => emailRegex.test(value),
+                        errorMessage: 'Please enter a valid email address'
+                    },
+                    {
+                        id: 'registerPhone',
+                        label: 'Phone Number',
+                        validate: (value) => phoneRegex.test(value),
+                        errorMessage: 'Please enter a valid phone number'
+                    },
+                    {
+                        id: 'registerPassword',
+                        label: 'Password',
+                        validate: (value) => value.length >= 8,
+                        errorMessage: 'Password must be at least 8 characters'
+                    },
+                    {
+                        id: 'registerConfirmPassword',
+                        label: 'Confirm Password',
+                        validate: (value) => value === document.getElementById('registerPassword')?.value,
+                        errorMessage: 'Passwords do not match'
+                    }
+                ];
+
+                document.getElementById('registerForm')?.addEventListener('submit', (e) => {
