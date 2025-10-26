@@ -9,7 +9,7 @@
     <!-- Open Graph Tags -->
     <meta property="og:title" content="MsikaOnline - Malawi's Premier Marketplace">
     <meta property="og:description" content="Buy and sell with trusted local sellers in Malawi. Secure payments with MPamba, Airtel Money, and bank transfers.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
+    <meta property="og:image" content="/images/og-image.jpg">
     <meta property="og:url" content="https://msikaonline.mw">
     <meta property="og:type" content="website">
     <!-- Schema.org Markup -->
@@ -29,9 +29,9 @@
     }
     </script>
     <title>MsikaOnline - Malawi's Premier Marketplace</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" href="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" as="image">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <link rel="preload" href="/images/hero-bg.jpg" as="image">
     <style>
         :root {
             --primary-color: #289e47;
@@ -94,7 +94,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -175,13 +175,21 @@
             border-radius: 2px;
         }
 
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .product-card {
             border: none;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            will-change: transform, box-shadow;
             margin-bottom: 1.5rem;
         }
 
@@ -383,6 +391,11 @@
             display: block;
         }
 
+        .policy-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
         .animate-pop {
             animation: pop 0.3s ease-out;
         }
@@ -516,7 +529,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block">
-                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Malawi Market" class="img-fluid rounded shadow-lg animate-float" loading="lazy">
+                        <img src="/images/market.jpg" alt="Malawi Market" class="img-fluid rounded shadow-lg animate-float" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -591,6 +604,8 @@
                             <option value="electronics">Electronics</option>
                             <option value="clothing">Clothing</option>
                             <option value="vehicles">Vehicles</option>
+                            <option value="art">Art & Crafts</option>
+                            <option value="jewelry">Jewelry</option>
                         </select>
                         <a href="#" class="btn btn-outline-malawi">View All <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i></a>
                     </div>
@@ -599,7 +614,7 @@
                     <div class="col-md-6 col-lg-3" data-category="furniture">
                         <div class="card product-card h-100">
                             <div class="badge-discount">-20%</div>
-                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Handcrafted Wooden Chair" loading="lazy">
+                            <img src="/images/chair.jpg" class="card-img-top" alt="Handcrafted Wooden Chair" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Handcrafted Wooden Chair</h5>
                                 <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Lilongwe</p>
@@ -615,7 +630,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3" data-category="art">
                         <div class="card product-card h-100">
-                            <img src="https://images.unsplash.com/photo-1517848568502-d03fa74e1964?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Traditional Malawi Basket" loading="lazy">
+                            <img src="/images/basket.jpg" class="card-img-top" alt="Traditional Malawi Basket" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Traditional Malawi Basket</h5>
                                 <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Blantyre</p>
@@ -632,857 +647,4 @@
                     <div class="col-md-6 col-lg-3" data-category="electronics">
                         <div class="card product-card h-100">
                             <div class="badge-discount">New</div>
-                            <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Second-hand Smartphone" loading="lazy">
-                            <div class="card-body">
-                                <h5 class="card-title">Second-hand Smartphone</h5>
-                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Mzuzu</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h6 class="price mb-0">MK 120,000</h6>
-                                    <span class="rating"><i class="fas fa-star" aria-hidden="true"></i> 4.0</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white border-0">
-                                <button class="btn btn-malawi w-100" aria-label="Add Second-hand Smartphone to cart">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3" data-category="jewelry">
-                        <div class="card product-card h-100">
-                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Handmade Jewelry Set" loading="lazy">
-                            <div class="card-body">
-                                <h5 class="card-title">Handmade Jewelry Set</h5>
-                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Zomba</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h6 class="price mb-0">MK 15,000</h6>
-                                    <span class="rating"><i class="fas fa-star" aria-hidden="true"></i> 4.7</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white border-0">
-                                <button class="btn btn-malawi w-100" aria-label="Add Handmade Jewelry Set to cart">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sell Section -->
-        <section class="py-5 bg-white" id="sell" role="region" aria-labelledby="sell-title">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card auth-card">
-                            <div class="card-header">
-                                <h4 class="mb-0" id="sell-title"><i class="fas fa-tag me-2" aria-hidden="true"></i>Sell Your Item</h4>
-                            </div>
-                            <div class="card-body">
-                                <form id="sellForm" enctype="multipart/form-data">
-                                    <div class="mb-3">
-                                        <label for="itemName" class="form-label">Item Name</label>
-                                        <input type="text" class="form-control" id="itemName" required aria-describedby="itemNameError">
-                                        <div id="itemNameError" class="invalid-feedback"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="itemDescription" class="form-label">Description</label>
-                                        <textarea class="form-control" id="itemDescription" rows="3" required aria-describedby="itemDescriptionError"></textarea>
-                                        <div id="itemDescriptionError" class="invalid-feedback"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="itemCategory" class="form-label">Category</label>
-                                        <select class="form-select" id="itemCategory" required aria-describedby="itemCategoryError">
-                                            <option value="">Select Category</option>
-                                            <option value="furniture">Furniture</option>
-                                            <option value="clothing">Clothing</option>
-                                            <option value="electronics">Electronics</option>
-                                            <option value="art">Art & Crafts</option>
-                                            <option value="agriculture">Agriculture</option>
-                                        </select>
-                                        <div id="itemCategoryError" class="invalid-feedback"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="itemPrice" class="form-label">Price (MWK)</label>
-                                        <input type="number" class="form-control" id="itemPrice" required aria-describedby="itemPriceError">
-                                        <div id="itemPriceError" class="invalid-feedback"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="itemLocation" class="form-label">Location</label>
-                                        <select class="form-select" id="itemLocation" required aria-describedby="itemLocationError">
-                                            <option value="">Select Location</option>
-                                            <option value="lilongwe">Lilongwe</option>
-                                            <option value="blantyre">Blantyre</option>
-                                            <option value="mzuzu">Mzuzu</option>
-                                            <option value="zomba">Zomba</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                        <div id="itemLocationError" class="invalid-feedback"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="itemImages" class="form-label">Upload Images (Max 5)</label>
-                                        <input type="file" class="form-control" id="itemImages" multiple accept="image/*" required aria-describedby="itemImagesError">
-                                        <div id="itemImagesError" class="invalid-feedback"></div>
-                                        <div class="image-preview mt-2 d-flex flex-wrap gap-2" id="imagePreview"></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Payment Methods Accepted</label>
-                                        <div class="d-flex flex-wrap gap-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="mpamba" checked>
-                                                <label class="form-check-label" for="mpamba">
-                                                    <span class="badge bg-primary">MPamba</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="airtel-money" checked>
-                                                <label class="form-check-label" for="airtel-money">
-                                                    <span class="badge bg-danger">Airtel Money</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="standard-bank">
-                                                <label class="form-check-label" for="standard-bank">
-                                                    <span class="badge bg-info">Standard Bank</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="national-bank">
-                                                <label class="form-check-label" for="national-bank">
-                                                    <span class="badge bg-warning text-dark">National Bank</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-malawi w-100 py-2">List Item for Sale</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="py-5 bg-light" role="region" aria-labelledby="testimonials-title">
-            <div class="container">
-                <h2 class="section-title text-center mb-5" id="testimonials-title">What Our Users Say</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <div class="mb-3 text-warning">
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                </div>
-                                <p class="card-text">"MsikaOnline helped me sell my furniture quickly and safely. The payment process was secure and I received my money instantly through MPamba."</p>
-                                <div class="d-flex align-items-center mt-3">
-                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3" width="50" height="50" alt="Sarah Banda" loading="lazy">
-                                    <div>
-                                        <h6 class="mb-0">Sarah Banda</h6>
-                                        <small class="text-muted">Lilongwe</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <div class="mb-3 text-warning">
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star-half-alt" aria-hidden="true"></i>
-                                </div>
-                                <p class="card-text">"I found exactly what I was looking for at a great price. The seller was verified and the transaction was smooth. Will definitely use again!"</p>
-                                <div class="d-flex align-items-center mt-3">
-                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle me-3" width="50" height="50" alt="James Phiri" loading="lazy">
-                                    <div>
-                                        <h6 class="mb-0">James Phiri</h6>
-                                        <small class="text-muted">Blantyre</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <div class="mb-3 text-warning">
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                    <i class="fas fa-star" aria-hidden="true"></i>
-                                </div>
-                                <p class="card-text">"As a small business owner, MsikaOnline has been invaluable for reaching customers across Malawi. The verification system builds trust with buyers."</p>
-                                <div class="d-flex align-items-center mt-3">
-                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="50" height="50" alt="Grace Mwale" loading="lazy">
-                                    <div>
-                                        <h6 class="mb-0">Grace Mwale</h6>
-                                        <small class="text-muted">Mzuzu</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Login Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-success text-white">
-                        <h5 class="modal-title" id="loginModalLabel"><i class="fas fa-sign-in-alt me-2" aria-hidden="true"></i>Login</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="loginForm">
-                            <div class="mb-3">
-                                <label for="loginEmail" class="form-label">Email or Phone</label>
-                                <input type="text" class="form-control" id="loginEmail" required aria-describedby="loginEmailError">
-                                <div id="loginEmailError" class="invalid-feedback"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="loginPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="loginPassword" required aria-describedby="loginPasswordError">
-                                <div id="loginPasswordError" class="invalid-feedback"></div>
-                                <div class="form-text text-end">
-                                    <a href="#" class="text-decoration-none">Forgot password?</a>
-                                </div>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="rememberMe">
-                                <label class="form-check-label" for="rememberMe">Remember me</label>
-                            </div>
-                            <button type="submit" class="btn btn-malawi w-100">Login</button>
-                            <div class="text-center mt-3">
-                                <p class="mb-0">Don't have an account? <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a></p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Register Modal -->
-        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-success text-white">
-                        <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus me-2" aria-hidden="true"></i>Register</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="registerForm">
-                            <div class="mb-3">
-                                <label for="registerName" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="registerName" required aria-describedby="registerNameError">
-                                <div id="registerNameError" class="invalid-feedback"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="registerEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="registerEmail" required aria-describedby="registerEmailError">
-                                <div id="registerEmailError" class="invalid-feedback"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="registerPhone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="registerPhone" required aria-describedby="registerPhoneError">
-                                <div id="registerPhoneError" class="invalid-feedback"></div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="registerPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="registerPassword" required aria-describedby="registerPasswordError">
-                                <div class="password-strength mt-2">
-                                    <div class="password-strength-bar" id="passwordStrengthBar"></div>
-                                </div>
-                                <div id="registerPasswordError" class="invalid-feedback"></div>
-                                <div class="form-text">Password must be at least 8 characters</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="registerConfirmPassword" required aria-describedby="registerConfirmPasswordError">
-                                <div id="registerConfirmPasswordError" class="invalid-feedback"></div>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="agreeTerms" required>
-                                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#terms-of-service" class="text-decoration-none">Terms of Service</a> and <a href="#privacy-policy" class="text-decoration-none">Privacy Policy</a></label>
-                            </div>
-                            <button type="submit" class="btn btn-malawi w-100">Register</button>
-                            <div class="text-center mt-3">
-                                <p class="mb-0">Already have an account? <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Verification Modal -->
-        <div class="modal fade" id="verificationModal" tabindex="-1" aria-labelledby="verificationModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-success text-white">
-                        <h5 class="modal-title" id="verificationModalLabel"><i class="fas fa-shield-alt me-2" aria-hidden="true"></i>Account Verification</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="text-center mb-4">
-                            <i class="fas fa-envelope fa-4x text-success mb-3" aria-hidden="true"></i>
-                            <h4>Verify Your Email</h4>
-                            <p>We've sent a verification code to <strong id="userEmail">user@example.com</strong></p>
-                        </div>
-                        <form id="verificationForm">
-                            <div class="mb-3">
-                                <label for="verificationCode" class="form-label">Verification Code</label>
-                                <input type="text" class="form-control text-center" id="verificationCode" maxlength="6" required aria-describedby="verificationCodeError">
-                                <div id="verificationCodeError" class="invalid-feedback"></div>
-                                <div class="form-text text-end">
-                                    <a href="#" class="text-decoration-none">Resend code</a>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-malawi w-100">Verify Account</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Terms of Service Section -->
-        <section id="terms-of-service" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="terms-title">
-            <div class="container">
-                <div class="policy-header">
-                    <h1 id="terms-title">Terms of Service</h1>
-                    <p class="text-muted">Last updated: April 19, 2025</p>
-                </div>
-                <div class="policy-section">
-                    <h2>1. Introduction</h2>
-                    <p>Welcome to MsikaOnline ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our website and services. By accessing or using MsikaOnline, you agree to comply with these Terms. If you disagree with any part, you may not access the service.</p>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHome">Back to Home</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Privacy Policy Section -->
-        <section id="privacy-policy" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="privacy-title">
-            <div class="container">
-                <div class="policy-header">
-                    <h1 id="privacy-title">Privacy Policy</h1>
-                    <p class="text-muted">Last updated: April 19, 2025</p>
-                </div>
-                <div class="policy-section">
-                    <h2>1. Information We Collect</h2>
-                    <p>We collect information to provide and improve our services:</p>
-                    <ul class="policy-list">
-                        <li><strong>Personal Information:</strong> Name, email, phone number, address when you register or transact</li>
-                        <li><strong>Transaction Data:</strong> Details of purchases and sales</li>
-                    </ul>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHomePrivacy">Back to Home</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cookie Policy Section -->
-        <section id="cookie-policy" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="cookie-title">
-            <div class="container">
-                <div class="policy-header">
-                    <h1 id="cookie-title">Cookie Policy</h1>
-                    <p class="text-muted">Last updated: April 19, 2025</p>
-                </div>
-                <div class="policy-section">
-                    <h2>1. What Are Cookies</h2>
-                    <p>Cookies are small text files stored on your device when you visit websites. They help websites remember information about your visit.</p>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHomeCookie">Back to Home</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- GDPR Compliance Section -->
-        <section id="gdpr-compliance" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="gdpr-title">
-            <div class="container">
-                <div class="policy-header">
-                    <h1 id="gdpr-title">GDPR Compliance Statement</h1>
-                    <p class="text-muted">Last updated: April 19, 2025</p>
-                </div>
-                <div class="policy-section">
-                    <h2>1. Our Commitment</h2>
-                    <p>MsikaOnline is committed to complying with the General Data Protection Regulation (GDPR) for our users in the European Union.</p>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHomeGDPR">Back to Home</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="footer-logo">MsikaOnline</div>
-                    <p>Malawi's trusted marketplace connecting buyers and sellers nationwide.</p>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Quick Links</h5>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#browse">Browse Items</a></li>
-                            <li><a href="#sell">Sell Items</a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">My Account</a></li>
-                            <li><a href="#">Pricing</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Categories</h5>
-                        <ul>
-                            <li><a href="#">Furniture</a></li>
-                            <li><a href="#">Electronics</a></li>
-                            <li><a href="#">Clothing</a></li>
-                            <li><a href="#">Vehicles</a></li>
-                            <li><a href="#">Agriculture</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <div class="footer-links">
-                        <h5>Company</h5>
-                        <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Help Center</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 mb-4">
-                    <div class="footer-links">
-                        <h5>Legal</h5>
-                        <ul>
-                            <li><a href="#terms-of-service" class="policy-link">Terms of Service</a></li>
-                            <li><a href="#privacy-policy" class="policy-link">Privacy Policy</a></li>
-                            <li><a href="#cookie-policy" class="policy-link">Cookie Policy</a></li>
-                            <li><a href="#gdpr-compliance" class="policy-link">GDPR</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start">
-                        <p class="mb-0">&copy; 2025 MsikaOnline. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <p class="mb-0">
-                            <span class="me-2">Proudly Malawian</span>
-                            <img src="https://flagcdn.com/w20/mw.png" alt="Malawi Flag" style="height: 15px;" loading="lazy">
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Toast Notification Container -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="toastNotification" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <strong class="me-auto">MsikaOnline</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body"></div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // PWA Manifest
-        const manifest = {
-            "name": "MsikaOnline",
-            "short_name": "MsikaOnline",
-            "description": "Malawi's premier online marketplace",
-            "start_url": "/",
-            "display": "standalone",
-            "background_color": "#f5f5f5",
-            "theme_color": "#289e47",
-            "icons": [
-                {
-                    "src": "/images/icon-192.png",
-                    "sizes": "192x192",
-                    "type": "image/png"
-                },
-                {
-                    "src": "/images/icon-512.png",
-                    "sizes": "512x512",
-                    "type": "image/png"
-                }
-            ]
-        };
-        const stringManifest = JSON.stringify(manifest);
-        const blob = new Blob([stringManifest], { type: 'application/json' });
-        const manifestURL = URL.createObjectURL(blob);
-        document.head.insertAdjacentHTML('beforeend', `<link rel="manifest" href="${manifestURL}">`);
-
-        // Service Worker
-        const swCode = `
-            self.addEventListener('install', (event) => {
-                event.waitUntil(
-                    caches.open('msikaonline-v1').then((cache) => {
-                        return cache.addAll([
-                            '/',
-                            '/images/icon-192.png',
-                            '/images/icon-512.png'
-                        ]).catch((err) => console.error('Cache add failed:', err));
-                    })
-                );
-            });
-            self.addEventListener('fetch', (event) => {
-                event.respondWith(
-                    caches.match(event.request).then((response) => {
-                        return response || fetch(event.request).catch(() => {
-                            return caches.match('/');
-                        });
-                    })
-                );
-            });
-        `;
-        const swBlob = new Blob([swCode], { type: 'application/javascript' });
-        const swURL = URL.createObjectURL(swBlob);
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register(swURL).catch((err) => {
-                    console.error('Service Worker registration failed:', err);
-                });
-            });
-        }
-
-        // Utility Functions
-        const showToast = (message, type = 'success') => {
-            const toast = document.getElementById('toastNotification');
-            if (!toast) return;
-            const toastBody = toast.querySelector('.toast-body');
-            toastBody.textContent = message;
-            toast.classList.remove('bg-success', 'bg-danger');
-            toast.classList.add(`bg-${type}`);
-            const bsToast = new bootstrap.Toast(toast);
-            bsToast.show();
-        };
-
-        const sanitizeInput = (input) => {
-            const div = document.createElement('div');
-            div.textContent = input;
-            return div.innerHTML;
-        };
-
-        const validateForm = (formId, fields) => {
-            const form = document.getElementById(formId);
-            if (!form) return false;
-
-            let isValid = true;
-            fields.forEach(field => {
-                const input = form.querySelector(`#${field.id}`);
-                const errorElement = document.getElementById(`${field.id}Error`);
-                if (!input || !errorElement) return;
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.classList.add('is-invalid');
-                    errorElement.textContent = `${field.label} is required`;
-                } else {
-                    input.classList.remove('is-invalid');
-                    errorElement.textContent = '';
-                }
-            });
-            return isValid;
-        };
-
-        // Image Preview
-        const handleImageUpload = () => {
-            const imageUpload = document.getElementById('itemImages');
-            const imagePreview = document.getElementById('imagePreview');
-            if (!imageUpload || !imagePreview) return;
-
-            imageUpload.addEventListener('change', () => {
-                imagePreview.innerHTML = '';
-                if (imageUpload.files.length > 5) {
-                    showToast('Maximum 5 images allowed', 'danger');
-                    imageUpload.value = '';
-                    return;
-                }
-
-                Array.from(imageUpload.files).forEach(file => {
-                    if (file.type.match('image.*')) {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const img = document.createElement('img');
-                            img.src = e.target.result;
-                            img.classList.add('img-thumbnail');
-                            img.style.width = '80px';
-                            img.style.height = '80px';
-                            img.alt = 'Uploaded product image';
-                            imagePreview.appendChild(img);
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                });
-            });
-        };
-
-        // Password Strength
-        const handlePasswordStrength = () => {
-            const passwordInput = document.getElementById('registerPassword');
-            const strengthBar = document.getElementById('passwordStrengthBar');
-            if (!passwordInput || !strengthBar) return;
-
-            passwordInput.addEventListener('input', function () {
-                const password = this.value;
-                let strength = 0;
-
-                if (password.length >= 8) strength += 25;
-                if (password.length >= 12) strength += 25;
-                if (/[A-Z]/.test(password)) strength += 15;
-                if (/[0-9]/.test(password)) strength += 15;
-                if (/[^A-Za-z0-9]/.test(password)) strength += 20;
-
-                strengthBar.style.width = strength + '%';
-                strengthBar.style.backgroundColor = strength < 50 ? '#dc3545' : strength < 75 ? '#fd7e14' : '#28a745';
-            });
-        };
-
-        // Dark Mode Toggle
-        const handleDarkMode = () => {
-            const html = document.getElementById('html-root');
-            const toggleButton = document.getElementById('darkModeToggle');
-            if (!html || !toggleButton) return;
-            toggleButton.addEventListener('click', () => {
-                html.classList.toggle('dark-mode');
-                const isDark = html.classList.contains('dark-mode');
-                toggleButton.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
-                localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-            });
-        };
-
-        // Product Search and Filter
-        const handleProductSearch = () => {
-            const searchInput = document.getElementById('productSearch');
-            const categoryFilter = document.getElementById('categoryFilter');
-            const productList = document.getElementById('productList');
-            if (!searchInput || !categoryFilter || !productList) return;
-
-            const filterProducts = () => {
-                const searchTerm = sanitizeInput(searchInput.value.toLowerCase());
-                const category = categoryFilter.value;
-                const products = productList.querySelectorAll('.col-md-6');
-
-                products.forEach(product => {
-                    const titleElement = product.querySelector('.card-title');
-                    if (!titleElement) return;
-                    const title = titleElement.textContent.toLowerCase();
-                    const productCategory = product.dataset.category;
-                    const matchesSearch = !searchTerm || title.includes(searchTerm);
-                    const matchesCategory = !category || productCategory === category;
-                    product.style.display = matchesSearch && matchesCategory ? '' : 'none';
-                });
-            };
-
-            searchInput.addEventListener('input', filterProducts);
-            categoryFilter.addEventListener('change', filterProducts);
-        };
-
-        // Cookie Consent
-        const handleCookieConsent = () => {
-            const cookieBanner = document.getElementById('cookieBanner');
-            const cookieAccept = document.getElementById('cookieAccept');
-            const cookieDecline = document.getElementById('cookieDecline');
-            if (!cookieBanner || !cookieAccept || !cookieDecline) return;
-
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.classList.add('show');
-            }
-
-            cookieAccept.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'accepted');
-                cookieBanner.classList.remove('show');
-                showToast('Cookies accepted');
-            });
-
-            cookieDecline.addEventListener('click', () => {
-                localStorage.setItem('cookieConsent', 'declined');
-                cookieBanner.classList.remove('show');
-                showToast('Cookies declined');
-            });
-        };
-
-        // Form Handlers
-        const handleForms = () => {
-            const loginForm = document.getElementById('loginForm');
-            if (loginForm) {
-                loginForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (validateForm('loginForm', [
-                        { id: 'loginEmail', label: 'Email or Phone' },
-                        { id: 'loginPassword', label: 'Password' }
-                    ])) {
-                        showToast('Login successful!');
-                        loginForm.reset();
-                    }
-                });
-            }
-
-            const registerForm = document.getElementById('registerForm');
-            if (registerForm) {
-                registerForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const fields = [
-                        { id: 'registerName', label: 'Full Name' },
-                        { id: 'registerEmail', label: 'Email' },
-                        { id: 'registerPhone', label: 'Phone Number' },
-                        { id: 'registerPassword', label: 'Password' },
-                        { id: 'registerConfirmPassword', label: 'Confirm Password' }
-                    ];
-                    if (!validateForm('registerForm', fields)) return;
-
-                    const password = document.getElementById('registerPassword')?.value;
-                    const confirmPassword = document.getElementById('registerConfirmPassword')?.value;
-                    if (password !== confirmPassword) {
-                        showToast('Passwords do not match', 'danger');
-                        return;
-                    }
-
-                    const verificationModal = new bootstrap.Modal(document.getElementById('verificationModal'));
-                    const userEmail = document.getElementById('userEmail');
-                    if (userEmail) {
-                        userEmail.textContent = sanitizeInput(document.getElementById('registerEmail')?.value || 'user@example.com');
-                    }
-                    verificationModal.show();
-                });
-            }
-
-            const verificationForm = document.getElementById('verificationForm');
-            if (verificationForm) {
-                verificationForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (validateForm('verificationForm', [
-                        { id: 'verificationCode', label: 'Verification Code' }
-                    ])) {
-                        showToast('Account verified successfully!');
-                        const verificationModal = bootstrap.Modal.getInstance(document.getElementById('verificationModal'));
-                        verificationModal?.hide();
-                        const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                        registerModal?.hide();
-                    }
-                });
-            }
-
-            const sellForm = document.getElementById('sellForm');
-            if (sellForm) {
-                sellForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (validateForm('sellForm', [
-                        { id: 'itemName', label: 'Item Name' },
-                        { id: 'itemDescription', label: 'Description' },
-                        { id: 'itemCategory', label: 'Category' },
-                        { id: 'itemPrice', label: 'Price' },
-                        { id: 'itemLocation', label: 'Location' },
-                        { id: 'itemImages', label: 'Images' }
-                    ])) {
-                        showToast('Item listed successfully!');
-                        sellForm.reset();
-                        const imagePreview = document.getElementById('imagePreview');
-                        if (imagePreview) imagePreview.innerHTML = '';
-                    }
-                });
-            }
-        };
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            handleImageUpload();
-            handlePasswordStrength();
-            handleDarkMode();
-            handleProductSearch();
-            handleCookieConsent();
-            handleForms();
-
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = anchor.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 70,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Policy page navigation
-            document.querySelectorAll('.policy-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    document.querySelectorAll('section[id]').forEach(section => {
-                        section.style.display = section.id === targetId.slice(1) ? 'block' : 'none';
-                    });
-                    document.querySelector('header').style.display = 'none';
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 70,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Back to home buttons
-            document.querySelectorAll('[id^="backToHome"]').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.querySelectorAll('section[id]').forEach(section => {
-                        section.style.display = ['home', 'categories', 'browse', 'sell'].includes(section.id) ? 'block' : 'none';
-                    });
-                    document.querySelector('header').style.display = 'block';
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Initialize dark mode
-            if (localStorage.getItem('darkMode') === 'enabled' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                const html = document.getElementById('html-root');
-                const toggleButton = document.getElementById('darkModeToggle');
-                if (html && toggleButton) {
-                    html.classList.add('dark-mode');
-                    toggleButton.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
-                }
-            }
-        });
-    </script>
-</body>
-</html>
+                            <img src="/images/smartphone.jpg" class="card-img-top" alt="Second-hand Smartphone" loading="lazy
