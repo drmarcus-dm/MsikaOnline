@@ -29,12 +29,448 @@
     }
     </script>
     <title>MsikaOnline - Malawi's Premier Marketplace</title>
-    <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="/styles.css">
     <link rel="preload" href="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" as="image">
+    <style>
+        :root {
+            --primary-color: #289e47;
+            --secondary-color: #000000;
+            --accent-color: #e30b17;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --text-color: #212529;
+            --bg-color: #f5f5f5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #f8f9fa;
+                --bg-color: #343a40;
+                --light-color: #495057;
+                --dark-color: #212529;
+            }
+        }
+
+        html.dark-mode {
+            --text-color: #f8f9fa;
+            --bg-color: #343a40;
+            --light-color: #495057;
+            --dark-color: #212529;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 70px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, var(--accent-color) 33%, var(--secondary-color) 33%, var(--secondary-color) 66%, var(--primary-color) 66%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--accent-color) 33%, var(--secondary-color) 33%, var(--secondary-color) 66%, var(--primary-color) 66%);
+            border-radius: 2px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-malawi {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-malawi:hover {
+            background-color: #1e7e38;
+            border-color: #1e7e38;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline-malawi {
+            border-color: white;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-malawi:hover {
+            background-color: white;
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-color) 33%, var(--secondary-color) 33%, var(--secondary-color) 66%, var(--primary-color) 66%);
+            border-radius: 2px;
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform, box-shadow;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+        .product-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .product-card .card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card .location {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .product-card .price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .product-card .rating {
+            color: #ffc107;
+        }
+
+        .badge-discount {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+        }
+
+        .auth-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .auth-card .card-header {
+            background: linear-gradient(to right, var(--accent-color) 33%, var(--secondary-color) 33%, var(--secondary-color) 66%, var(--primary-color) 66%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .auth-card .card-body {
+            padding: 2rem;
+        }
+
+        .form-control {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(40, 158, 71, 0.25);
+        }
+
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .password-strength {
+            height: 5px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .password-strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .verification-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 50px;
+            margin-left: 0.5rem;
+        }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h5 {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-links h5::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .policy-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 3rem;
+            margin: 3rem auto;
+        }
+
+        .policy-header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .policy-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .policy-section h3 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .policy-list {
+            padding-left: 1.5rem;
+        }
+
+        .policy-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1.5rem;
+            z-index: 1050;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        .animate-pop {
+            animation: pop 0.3s ease-out;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .policy-container {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+            }
+            .navbar-nav {
+                background-color: var(--dark-color);
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -132,9 +568,64 @@
             </div>
         </header>
 
-        <!-- Categories, Featured Products, Sell, Testimonials, etc. -->
-        <!-- These sections remain largely unchanged but include lazy loading for images and ARIA attributes -->
-        <!-- Example for Featured Products -->
+        <!-- Categories Section -->
+        <section class="py-5 bg-white" id="categories">
+            <div class="container">
+                <h2 class="section-title">Popular Categories</h2>
+                <div class="row g-4">
+                    <div class="col-md-3 col-6">
+                        <a href="#" class="text-decoration-none" aria-label="Furniture category">
+                            <div class="card category-card h-100 border-0 shadow-sm animate-pop">
+                                <div class="card-body text-center">
+                                    <div class="icon-circle bg-primary bg-opacity-10 text-primary mb-3 mx-auto">
+                                        <i class="fas fa-couch fa-2x"></i>
+                                    </div>
+                                    <h5 class="mb-0">Furniture</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <a href="#" class="text-decoration-none" aria-label="Electronics category">
+                            <div class="card category-card h-100 border-0 shadow-sm animate-pop">
+                                <div class="card-body text-center">
+                                    <div class="icon-circle bg-success bg-opacity-10 text-success mb-3 mx-auto">
+                                        <i class="fas fa-mobile-alt fa-2x"></i>
+                                    </div>
+                                    <h5 class="mb-0">Electronics</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <a href="#" class="text-decoration-none" aria-label="Clothing category">
+                            <div class="card category-card h-100 border-0 shadow-sm animate-pop">
+                                <div class="card-body text-center">
+                                    <div class="icon-circle bg-danger bg-opacity-10 text-danger mb-3 mx-auto">
+                                        <i class="fas fa-tshirt fa-2x"></i>
+                                    </div>
+                                    <h5 class="mb-0">Clothing</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <a href="#" class="text-decoration-none" aria-label="Vehicles category">
+                            <div class="card category-card h-100 border-0 shadow-sm animate-pop">
+                                <div class="card-body text-center">
+                                    <div class="icon-circle bg-warning bg-opacity-10 text-warning mb-3 mx-auto">
+                                        <i class="fas fa-car fa-2x"></i>
+                                    </div>
+                                    <h5 class="mb-0">Vehicles</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
         <section class="py-5 bg-light" id="browse">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center mb-5">
@@ -168,12 +659,446 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Other products follow similar structure -->
+                    <div class="col-md-6 col-lg-3" data-category="art">
+                        <div class="card product-card h-100">
+                            <img src="https://images.unsplash.com/photo-1517848568502-d03fa74e1964?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Traditional Malawi Basket" loading="lazy">
+                            <div class="card-body">
+                                <h5 class="card-title">Traditional Malawi Basket</h5>
+                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1"></i> Blantyre</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="price mb-0">MK 8,500</h6>
+                                    <span class="rating"><i class="fas fa-star"></i> 4.2</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <button class="btn btn-malawi w-100" aria-label="Add Traditional Malawi Basket to cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-category="electronics">
+                        <div class="card product-card h-100">
+                            <div class="badge-discount">New</div>
+                            <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Second-hand Smartphone" loading="lazy">
+                            <div class="card-body">
+                                <h5 class="card-title">Second-hand Smartphone</h5>
+                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1"></i> Mzuzu</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="price mb-0">MK 120,000</h6>
+                                    <span class="rating"><i class="fas fa-star"></i> 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <button class="btn btn-malawi w-100" aria-label="Add Second-hand Smartphone to cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-category="jewelry">
+                        <div class="card product-card h-100">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Handmade Jewelry Set" loading="lazy">
+                            <div class="card-body">
+                                <h5 class="card-title">Handmade Jewelry Set</h5>
+                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1"></i> Zomba</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="price mb-0">MK 15,000</h6>
+                                    <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-0">
+                                <button class="btn btn-malawi w-100" aria-label="Add Handmade Jewelry Set to cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Other sections (Sell, Testimonials, etc.) remain similar with added accessibility and lazy loading -->
+        <!-- Sell Section -->
+        <section class="py-5 bg-white" id="sell">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card auth-card">
+                            <div class="card-header">
+                                <h4 class="mb-0"><i class="fas fa-tag me-2"></i>Sell Your Item</h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="sellForm" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="itemName" class="form-label">Item Name</label>
+                                        <input type="text" class="form-control" id="itemName" required aria-describedby="itemNameError">
+                                        <div id="itemNameError" class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="itemDescription" class="form-label">Description</label>
+                                        <textarea class="form-control" id="itemDescription" rows="3" required aria-describedby="itemDescriptionError"></textarea>
+                                        <div id="itemDescriptionError" class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="itemCategory" class="form-label">Category</label>
+                                        <select class="form-select" id="itemCategory" required aria-describedby="itemCategoryError">
+                                            <option value="">Select Category</option>
+                                            <option value="furniture">Furniture</option>
+                                            <option value="clothing">Clothing</option>
+                                            <option value="electronics">Electronics</option>
+                                            <option value="art">Art & Crafts</option>
+                                            <option value="agriculture">Agriculture</option>
+                                        </select>
+                                        <div id="itemCategoryError" class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="itemPrice" class="form-label">Price (MWK)</label>
+                                        <input type="number" class="form-control" id="itemPrice" required aria-describedby="itemPriceError">
+                                        <div id="itemPriceError" class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="itemLocation" class="form-label">Location</label>
+                                        <select class="form-select" id="itemLocation" required aria-describedby="itemLocationError">
+                                            <option value="">Select Location</option>
+                                            <option value="lilongwe">Lilongwe</option>
+                                            <option value="blantyre">Blantyre</option>
+                                            <option value="mzuzu">Mzuzu</option>
+                                            <option value="zomba">Zomba</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <div id="itemLocationError" class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="itemImages" class="form-label">Upload Images (Max 5)</label>
+                                        <input type="file" class="form-control" id="itemImages" multiple accept="image/*" required aria-describedby="itemImagesError">
+                                        <div id="itemImagesError" class="invalid-feedback"></div>
+                                        <div class="image-preview mt-2 d-flex flex-wrap gap-2" id="imagePreview"></div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Payment Methods Accepted</label>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="mpamba" checked>
+                                                <label class="form-check-label" for="mpamba">
+                                                    <span class="badge bg-primary">MPamba</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="airtel-money" checked>
+                                                <label class="form-check-label" for="airtel-money">
+                                                    <span class="badge bg-danger">Airtel Money</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="standard-bank">
+                                                <label class="form-check-label" for="standard-bank">
+                                                    <span class="badge bg-info">Standard Bank</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="national-bank">
+                                                <label class="form-check-label" for="national-bank">
+                                                    <span class="badge bg-warning text-dark">National Bank</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-malawi w-100 py-2">List Item for Sale</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">What Our Users Say</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="mb-3 text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="card-text">"MsikaOnline helped me sell my furniture quickly and safely. The payment process was secure and I received my money instantly through MPamba."</p>
+                                <div class="d-flex align-items-center mt-3">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3" width="50" height="50" alt="Sarah Banda" loading="lazy">
+                                    <div>
+                                        <h6 class="mb-0">Sarah Banda</h6>
+                                        <small class="text-muted">Lilongwe</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="mb-3 text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="card-text">"I found exactly what I was looking for at a great price. The seller was verified and the transaction was smooth. Will definitely use again!"</p>
+                                <div class="d-flex align-items-center mt-3">
+                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle me-3" width="50" height="50" alt="James Phiri" loading="lazy">
+                                    <div>
+                                        <h6 class="mb-0">James Phiri</h6>
+                                        <small class="text-muted">Blantyre</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="mb-3 text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="card-text">"As a small business owner, MsikaOnline has been invaluable for reaching customers across Malawi. The verification system builds trust with buyers."</p>
+                                <div class="d-flex align-items-center mt-3">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="50" height="50" alt="Grace Mwale" loading="lazy">
+                                    <div>
+                                        <h6 class="mb-0">Grace Mwale</h6>
+                                        <small class="text-muted">Mzuzu</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="loginModalLabel"><i class="fas fa-sign-in-alt me-2"></i>Login</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email or Phone</label>
+                                <input type="text" class="form-control" id="loginEmail" required aria-describedby="loginEmailError">
+                                <div id="loginEmailError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required aria-describedby="loginPasswordError">
+                                <div id="loginPasswordError" class="invalid-feedback"></div>
+                                <div class="form-text text-end">
+                                    <a href="#" class="text-decoration-none">Forgot password?</a>
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-malawi w-100">Login</button>
+                            <div class="text-center mt-3">
+                                <p class="mb-0">Don't have an account? <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus me-2"></i>Register</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registerForm">
+                            <div class="mb-3">
+                                <label for="registerName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="registerName" required aria-describedby="registerNameError">
+                                <div id="registerNameError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="registerEmail" required aria-describedby="registerEmailError">
+                                <div id="registerEmailError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="registerPhone" required aria-describedby="registerPhoneError">
+                                <div id="registerPhoneError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="registerPassword" required aria-describedby="registerPasswordError">
+                                <div class="password-strength mt-2">
+                                    <div class="password-strength-bar" id="passwordStrengthBar"></div>
+                                </div>
+                                <div id="registerPasswordError" class="invalid-feedback"></div>
+                                <div class="form-text">Password must be at least 8 characters</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="registerConfirmPassword" required aria-describedby="registerConfirmPasswordError">
+                                <div id="registerConfirmPasswordError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#terms-of-service" class="text-decoration-none">Terms of Service</a> and <a href="#privacy-policy" class="text-decoration-none">Privacy Policy</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-malawi w-100">Register</button>
+                            <div class="text-center mt-3">
+                                <p class="mb-0">Already have an account? <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verification Modal -->
+        <div class="modal fade" id="verificationModal" tabindex="-1" aria-labelledby="verificationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="verificationModalLabel"><i class="fas fa-shield-alt me-2"></i>Account Verification</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-envelope fa-4x text-success mb-3"></i>
+                            <h4>Verify Your Email</h4>
+                            <p>We've sent a verification code to <strong id="userEmail">user@example.com</strong></p>
+                        </div>
+                        <form id="verificationForm">
+                            <div class="mb-3">
+                                <label for="verificationCode" class="form-label">Verification Code</label>
+                                <input type="text" class="form-control text-center" id="verificationCode" maxlength="6" required aria-describedby="verificationCodeError">
+                                <div id="verificationCodeError" class="invalid-feedback"></div>
+                                <div class="form-text text-end">
+                                    <a href="#" class="text-decoration-none">Resend code</a>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-malawi w-100">Verify Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms of Service Section -->
+        <section id="terms-of-service" class="py-5 bg-light" style="display: none;">
+            <div class="container policy-container">
+                <div class="policy-header">
+                    <h1>Terms of Service</h1>
+                    <p class="text-muted">Last updated: April 19, 2025</p>
+                </div>
+                <div class="policy-section">
+                    <h2>1. Introduction</h2>
+                    <p>Welcome to MsikaOnline ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our website and services. By accessing or using MsikaOnline, you agree to comply with these Terms. If you disagree with any part, you may not access the service.</p>
+                </div>
+                <div class="policy-section">
+                    <h2>2. User Accounts</h2>
+                    <p>To use certain features, you must register for an account. You agree to:</p>
+                    <ul class="policy-list">
+                        <li>Provide accurate and complete information</li>
+                        <li>Maintain the security of your password</li>
+                        <li>Be responsible for all activities under your account</li>
+                        <li>Not create accounts for others without permission</li>
+                    </ul>
+                </div>
+                <div class="policy-section">
+                    <h2>3. Buying and Selling</h2>
+                    <h3>3.1 Seller Responsibilities</h3>
+                    <p>Sellers must:</p>
+                    <ul class="policy-list">
+                        <li>Provide accurate descriptions of items</li>
+                        <li>Honor the price listed</li>
+                        <li>Ship items promptly after payment</li>
+                        <li>Comply with all applicable laws</li>
+                    </ul>
+                    <h3>3.2 Buyer Responsibilities</h3>
+                    <p>Buyers must:</p>
+                    <ul class="policy-list">
+                        <li>Pay for items promptly</li>
+                        <li>Inspect items upon receipt</li>
+                        <li>Report any issues within 7 days</li>
+                    </ul>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-malawi" id="backToHome">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy-policy" class="py-5 bg-light" style="display: none;">
+            <div class="container policy-container">
+                <div class="policy-header">
+                    <h1>Privacy Policy</h1>
+                    <p class="text-muted">Last updated: April 19, 2025</p>
+                </div>
+                <div class="policy-section">
+                    <h2>1. Information We Collect</h2>
+                    <p>We collect information to provide and improve our services:</p>
+                    <ul class="policy-list">
+                        <li><strong>Personal Information:</strong> Name, email, phone number, address when you register or transact</li>
+                        <li><strong>Transaction Data:</strong> Details of purchases and sales</li>
+                        <li><strong>Usage Data:</strong> How you interact with our website</li>
+                        <li><strong>Device Information:</strong> IP address, browser type, operating system</li>
+                    </ul>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-malawi" id="backToHomePrivacy">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cookie Policy Section -->
+        <section id="cookie-policy" class="py-5 bg-light" style="display: none;">
+            <div class="container policy-container">
+                <div class="policy-header">
+                    <h1>Cookie Policy</h1>
+                    <p class="text-muted">Last updated: April 19, 2025</p>
+                </div>
+                <div class="policy-section">
+                    <h2>1. What Are Cookies</h2>
+                    <p>Cookies are small text files stored on your device when you visit websites. They help websites remember information about your visit.</p>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-malawi" id="backToHomeCookie">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GDPR Compliance Section -->
+        <section id="gdpr-compliance" class="py-5 bg-light" style="display: none;">
+            <div class="container policy-container">
+                <div class="policy-header">
+                    <h1>GDPR Compliance Statement</h1>
+                    <p class="text-muted">Last updated: April 19, 2025</p>
+                </div>
+                <div class="policy-section">
+                    <h2>1. Our Commitment</h2>
+                    <p>MsikaOnline is committed to complying with the General Data Protection Regulation (GDPR) for our users in the European Union.</p>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-malawi" id="backToHomeGDPR">Back to Home</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -190,7 +1115,53 @@
                         <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <!-- Footer links remain the same but with aria-labels -->
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#browse">Browse Items</a></li>
+                            <li><a href="#sell">Sell Items</a></li>
+                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">My Account</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Categories</h5>
+                        <ul>
+                            <li><a href="#">Furniture</a></li>
+                            <li><a href="#">Electronics</a></li>
+                            <li><a href="#">Clothing</a></li>
+                            <li><a href="#">Vehicles</a></li>
+                            <li><a href="#">Agriculture</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <div class="footer-links">
+                        <h5>Legal</h5>
+                        <ul>
+                            <li><a href="#terms-of-service" class="policy-link">Terms of Service</a></li>
+                            <li><a href="#privacy-policy" class="policy-link">Privacy Policy</a></li>
+                            <li><a href="#cookie-policy" class="policy-link">Cookie Policy</a></li>
+                            <li><a href="#gdpr-compliance" class="policy-link">GDPR</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="copyright">
                 <div class="row">
@@ -220,14 +1191,359 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/scripts.js" defer></script>
     <script>
-        // Service Worker Registration
+        // PWA Manifest
+        const manifest = {
+            "name": "MsikaOnline",
+            "short_name": "MsikaOnline",
+            "description": "Malawi's premier online marketplace",
+            "start_url": "/",
+            "display": "standalone",
+            "background_color": "#f5f5f5",
+            "theme_color": "#289e47",
+            "icons": [
+                {
+                    "src": "https://via.placeholder.com/192",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "https://via.placeholder.com/512",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+        const stringManifest = JSON.stringify(manifest);
+        const blob = new Blob([stringManifest], { type: 'application/json' });
+        const manifestURL = URL.createObjectURL(blob);
+        document.head.insertAdjacentHTML('beforeend', `<link rel="manifest" href="${manifestURL}">`);
+
+        // Service Worker
+        const swCode = `
+            self.addEventListener('install', (event) => {
+                event.waitUntil(
+                    caches.open('msikaonline-v1').then((cache) => {
+                        return cache.addAll([
+                            '/',
+                            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
+                            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+                            'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
+                            'https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'
+                        ]);
+                    })
+                );
+            });
+            self.addEventListener('fetch', (event) => {
+                event.respondWith(
+                    caches.match(event.request).then((response) => {
+                        return response || fetch(event.request);
+                    })
+                );
+            });
+        `;
+        const swBlob = new Blob([swCode], { type: 'application/javascript' });
+        const swURL = URL.createObjectURL(swBlob);
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
+                navigator.serviceWorker.register(swURL);
             });
         }
+
+        // Utility Functions
+        const showToast = (message, type = 'success') => {
+            const toast = document.getElementById('toastNotification');
+            const toastBody = toast.querySelector('.toast-body');
+            toastBody.textContent = message;
+            toast.classList.add(`bg-${type}`);
+            const bsToast = new bootstrap.Toast(toast);
+            bsToast.show();
+        };
+
+        const sanitizeInput = (input) => {
+            const div = document.createElement('div');
+            div.textContent = input;
+            return div.innerHTML;
+        };
+
+        const validateForm = (formId, fields) => {
+            const form = document.getElementById(formId);
+            if (!form) return false;
+
+            let isValid = true;
+            fields.forEach(field => {
+                const input = form.querySelector(`#${field.id}`);
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('is-invalid');
+                    document.getElementById(`${field.id}Error`).textContent = `${field.label} is required`;
+                } else {
+                    input.classList.remove('is-invalid');
+                    document.getElementById(`${field.id}Error`).textContent = '';
+                }
+            });
+            return isValid;
+        };
+
+        // Image Preview
+        const handleImageUpload = () => {
+            const imageUpload = document.getElementById('itemImages');
+            const imagePreview = document.getElementById('imagePreview');
+            if (!imageUpload || !imagePreview) return;
+
+            imageUpload.addEventListener('change', () => {
+                imagePreview.innerHTML = '';
+                if (imageUpload.files.length > 5) {
+                    showToast('Maximum 5 images allowed', 'danger');
+                    imageUpload.value = '';
+                    return;
+                }
+
+                Array.from(imageUpload.files).forEach(file => {
+                    if (file.type.match('image.*')) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.classList.add('img-thumbnail');
+                            img.style.width = '80px';
+                            img.style.height = '80px';
+                            img.alt = 'Uploaded product image';
+                            imagePreview.appendChild(img);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+        };
+
+        // Password Strength
+        const handlePasswordStrength = () => {
+            const passwordInput = document.getElementById('registerPassword');
+            const strengthBar = document.getElementById('passwordStrengthBar');
+            if (!passwordInput || !strengthBar) return;
+
+            passwordInput.addEventListener('input', function () {
+                const password = this.value;
+                let strength = 0;
+
+                if (password.length >= 8) strength += 25;
+                if (password.length >= 12) strength += 25;
+                if (/[A-Z]/.test(password)) strength += 15;
+                if (/[0-9]/.test(password)) strength += 15;
+                if (/[^A-Za-z0-9]/.test(password)) strength += 20;
+
+                strengthBar.style.width = strength + '%';
+                strengthBar.style.backgroundColor = strength < 50 ? '#dc3545' : strength < 75 ? '#fd7e14' : '#28a745';
+            });
+        };
+
+        // Dark Mode Toggle
+        const toggleDarkMode = () => {
+            const html = document.getElementById('html-root');
+            const toggleButton = document.getElementById('darkModeToggle');
+            html.classList.toggle('dark-mode');
+            const isDark = html.classList.contains('dark-mode');
+            toggleButton.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i>`;
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+        };
+
+        // Product Search and Filter
+        const handleProductSearch = () => {
+            const searchInput = document.getElementById('productSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const productList = document.getElementById('productList');
+            if (!searchInput || !categoryFilter || !productList) return;
+
+            const filterProducts = () => {
+                const searchTerm = sanitizeInput(searchInput.value.toLowerCase());
+                const category = categoryFilter.value;
+                const products = productList.querySelectorAll('.col-md-6');
+
+                products.forEach(product => {
+                    const title = product.querySelector('.card-title').textContent.toLowerCase();
+                    const productCategory = product.dataset.category;
+                    const matchesSearch = !searchTerm || title.includes(searchTerm);
+                    const matchesCategory = !category || productCategory === category;
+                    product.style.display = matchesSearch && matchesCategory ? '' : 'none';
+                });
+            };
+
+            searchInput.addEventListener('input', filterProducts);
+            categoryFilter.addEventListener('change', filterProducts);
+        };
+
+        // Cookie Consent
+        const handleCookieConsent = () => {
+            const cookieBanner = document.getElementById('cookieBanner');
+            const cookieAccept = document.getElementById('cookieAccept');
+            const cookieDecline = document.getElementById('cookieDecline');
+
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.classList.add('show');
+            }
+
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieBanner.classList.remove('show');
+                showToast('Cookies accepted');
+            });
+
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieBanner.classList.remove('show');
+                showToast('Cookies declined');
+            });
+        };
+
+        // Form Handlers
+        const handleForms = () => {
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (validateForm('loginForm', [
+                        { id: 'loginEmail', label: 'Email or Phone' },
+                        { id: 'loginPassword', label: 'Password' }
+                    ])) {
+                        showToast('Login successful!');
+                        loginForm.reset();
+                    }
+                });
+            }
+
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const fields = [
+                        { id: 'registerName', label: 'Full Name' },
+                        { id: 'registerEmail', label: 'Email' },
+                        { id: 'registerPhone', label: 'Phone Number' },
+                        { id: 'registerPassword', label: 'Password' },
+                        { id: 'registerConfirmPassword', label: 'Confirm Password' }
+                    ];
+                    if (!validateForm('registerForm', fields)) return;
+
+                    const password = document.getElementById('registerPassword').value;
+                    const confirmPassword = document.getElementById('registerConfirmPassword').value;
+                    if (password !== confirmPassword) {
+                        showToast('Passwords do not match', 'danger');
+                        return;
+                    }
+
+                    const verificationModal = new bootstrap.Modal(document.getElementById('verificationModal'));
+                    const userEmail = document.getElementById('userEmail');
+                    userEmail.textContent = sanitizeInput(document.getElementById('registerEmail').value);
+                    verificationModal.show();
+                });
+            }
+
+            const verificationForm = document.getElementById('verificationForm');
+            if (verificationForm) {
+                verificationForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (validateForm('verificationForm', [
+                        { id: 'verificationCode', label: 'Verification Code' }
+                    ])) {
+                        showToast('Account verified successfully!');
+                        const verificationModal = bootstrap.Modal.getInstance(document.getElementById('verificationModal'));
+                        verificationModal.hide();
+                        const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+                        registerModal.hide();
+                    }
+                });
+            }
+
+            const sellForm = document.getElementById('sellForm');
+            if (sellForm) {
+                sellForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    if (validateForm('sellForm', [
+                        { id: 'itemName', label: 'Item Name' },
+                        { id: 'itemDescription', label: 'Description' },
+                        { id: 'itemCategory', label: 'Category' },
+                        { id: 'itemPrice', label: 'Price' },
+                        { id: 'itemLocation', label: 'Location' },
+                        { id: 'itemImages', label: 'Images' }
+                    ])) {
+                        showToast('Item listed successfully!');
+                        sellForm.reset();
+                        document.getElementById('imagePreview').innerHTML = '';
+                    }
+                });
+            }
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            handleImageUpload();
+            handlePasswordStrength();
+            handleDarkMode();
+            handleProductSearch();
+            handleCookieConsent();
+            handleForms();
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = anchor.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Policy page navigation
+            document.querySelectorAll('.policy-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    document.querySelectorAll('section[id]').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    document.querySelector(targetId).style.display = 'block';
+                    window.scrollTo({
+                        top: document.querySelector(targetId).offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Back to home buttons
+            document.querySelectorAll('[id^="backToHome"]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelectorAll('section[id]').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    document.querySelectorAll('header, section').forEach(element => {
+                        if (!element.id.startsWith('terms-of-service') &&
+                            !element.id.startsWith('privacy-policy') &&
+                            !element.id.startsWith('cookie-policy') &&
+                            !element.id.startsWith('gdpr-compliance')) {
+                            element.style.display = 'block';
+                        }
+                    });
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Initialize dark mode
+            if (localStorage.getItem('darkMode') === 'enabled' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.getElementById('html-root').classList.add('dark-mode');
+                document.getElementById('darkModeToggle').innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
     </script>
 </body>
 </html>
