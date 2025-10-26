@@ -29,8 +29,8 @@
     }
     </script>
     <title>MsikaOnline - Malawi's Premier Marketplace</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" onerror="this.href='/css/bootstrap.min.css'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" onerror="this.href='/css/font-awesome.min.css'">
     <link rel="preload" href="/images/hero-bg.jpg" as="image">
     <style>
         :root {
@@ -139,6 +139,7 @@
             background-color: #1e7e38;
             border-color: #1e7e38;
             -webkit-transform: translateY(-3px);
+            -moz-transform: translateY(-3px);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -156,6 +157,7 @@
             background-color: white;
             color: var(--dark-color);
             -webkit-transform: translateY(-3px);
+            -moz-transform: translateY(-3px);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -198,6 +200,7 @@
 
         .product-card:hover {
             -webkit-transform: translateY(-10px);
+            -moz-transform: translateY(-10px);
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
@@ -210,6 +213,7 @@
 
         .product-card:hover .card-img-top {
             -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
             transform: scale(1.05);
         }
 
@@ -371,6 +375,7 @@
         .social-icons a:hover {
             background-color: var(--primary-color);
             -webkit-transform: translateY(-3px);
+            -moz-transform: translateY(-3px);
             transform: translateY(-3px);
         }
 
@@ -400,6 +405,7 @@
         .policy-list {
             list-style-type: disc;
             padding-left: 20px;
+            margin-bottom: 1rem;
         }
 
         .animate-pop {
@@ -510,7 +516,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <p>We use cookies to enhance your experience. By continuing, you agree to our <a href="#cookie-policy" class="text-white">Cookie Policy</a>.</p>
+                    <p>We use cookies to enhance your experience. By continuing, you agree to our <a href="#cookie-policy" class="text-white policy-link">Cookie Policy</a>.</p>
                 </div>
                 <div class="col-md-4 text-md-end">
                     <button class="btn btn-outline-light me-2" id="cookieDecline" aria-label="Decline cookies">Decline</button>
@@ -716,13 +722,14 @@
                                             <option value="clothing">Clothing</option>
                                             <option value="electronics">Electronics</option>
                                             <option value="art">Art & Crafts</option>
-                                            <option value="agriculture">Agriculture</option>
+                                            <option value="jewelry">Jewelry</option>
+                                            <option value="vehicles">Vehicles</option>
                                         </select>
                                         <div id="itemCategoryError" class="invalid-feedback"></div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="itemPrice" class="form-label">Price (MWK)</label>
-                                        <input type="number" class="form-control" id="itemPrice" min="0" required aria-describedby="itemPriceError">
+                                        <input type="number" class="form-control" id="itemPrice" min="0" step="0.01" required aria-describedby="itemPriceError">
                                         <div id="itemPriceError" class="invalid-feedback"></div>
                                     </div>
                                     <div class="mb-3">
@@ -738,7 +745,7 @@
                                         <div id="itemLocationError" class="invalid-feedback"></div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="itemImages" class="form-label">Upload Images (Max 5)</label>
+                                        <label for="itemImages" class="form-label">Upload Images (Max 5, 5MB each)</label>
                                         <input type="file" class="form-control" id="itemImages" multiple accept="image/*" required aria-describedby="itemImagesError">
                                         <div id="itemImagesError" class="invalid-feedback"></div>
                                         <div class="image-preview mt-2 d-flex flex-wrap gap-2" id="imagePreview"></div>
@@ -772,7 +779,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-malawi w-100 py-2">List Item for Sale</button>
+                                    <button type="submit" class="btn btn-malawi w-100 py-2" aria-label="List item for sale">List Item for Sale</button>
                                 </form>
                             </div>
                         </div>
@@ -893,7 +900,7 @@
                                 <input type="checkbox" class="form-check-input" id="rememberMe">
                                 <label class="form-check-label" for="rememberMe">Remember me</label>
                             </div>
-                            <button type="submit" class="btn btn-malawi w-100">Login</button>
+                            <button type="submit" class="btn btn-malawi w-100" aria-label="Login">Login</button>
                             <div class="text-center mt-3">
                                 <p class="mb-0">Don't have an account? <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register</a></p>
                             </div>
@@ -944,9 +951,9 @@
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="agreeTerms" required>
-                                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#terms-of-service" class="text-decoration-none">Terms of Service</a> and <a href="#privacy-policy" class="text-decoration-none">Privacy Policy</a></label>
+                                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#terms-of-service" class="text-decoration-none policy-link">Terms of Service</a> and <a href="#privacy-policy" class="text-decoration-none policy-link">Privacy Policy</a></label>
                             </div>
-                            <button type="submit" class="btn btn-malawi w-100">Register</button>
+                            <button type="submit" class="btn btn-malawi w-100" aria-label="Register">Register</button>
                             <div class="text-center mt-3">
                                 <p class="mb-0">Already have an account? <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
                             </div>
@@ -979,7 +986,7 @@
                                     <a href="#" class="text-decoration-none">Resend code</a>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-malawi w-100">Verify Account</button>
+                            <button type="submit" class="btn btn-malawi w-100" aria-label="Verify account">Verify Account</button>
                         </form>
                     </div>
                 </div>
@@ -987,7 +994,7 @@
         </div>
 
         <!-- Terms of Service Section -->
-        <section id="terms-of-service" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="terms-title">
+        <section id="terms-of-service" class="py-5 bg-light d-none" role="region" aria-labelledby="terms-title">
             <div class="container">
                 <div class="policy-header">
                     <h1 id="terms-title">Terms of Service</h1>
@@ -998,13 +1005,13 @@
                     <p>Welcome to MsikaOnline ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our website and services. By accessing or using MsikaOnline, you agree to comply with these Terms. If you disagree with any part, you may not access the service.</p>
                 </div>
                 <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHome">Back to Home</a>
+                    <a href="#home" class="btn btn-malawi policy-link" aria-label="Back to home">Back to Home</a>
                 </div>
             </div>
         </section>
 
         <!-- Privacy Policy Section -->
-        <section id="privacy-policy" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="privacy-title">
+        <section id="privacy-policy" class="py-5 bg-light d-none" role="region" aria-labelledby="privacy-title">
             <div class="container">
                 <div class="policy-header">
                     <h1 id="privacy-title">Privacy Policy</h1>
@@ -1019,13 +1026,13 @@
                     </ul>
                 </div>
                 <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHomePrivacy">Back to Home</a>
+                    <a href="#home" class="btn btn-malawi policy-link" aria-label="Back to home">Back to Home</a>
                 </div>
             </div>
         </section>
 
         <!-- Cookie Policy Section -->
-        <section id="cookie-policy" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="cookie-title">
+        <section id="cookie-policy" class="py-5 bg-light d-none" role="region" aria-labelledby="cookie-title">
             <div class="container">
                 <div class="policy-header">
                     <h1 id="cookie-title">Cookie Policy</h1>
@@ -1036,13 +1043,13 @@
                     <p>Cookies are small text files stored on your device when you visit websites. They help websites remember information about your visit.</p>
                 </div>
                 <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHomeCookie">Back to Home</a>
+                    <a href="#home" class="btn btn-malawi policy-link" aria-label="Back to home">Back to Home</a>
                 </div>
             </div>
         </section>
 
         <!-- GDPR Compliance Section -->
-        <section id="gdpr-compliance" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="gdpr-title">
+        <section id="gdpr-compliance" class="py-5 bg-light d-none" role="region" aria-labelledby="gdpr-title">
             <div class="container">
                 <div class="policy-header">
                     <h1 id="gdpr-title">GDPR Compliance Statement</h1>
@@ -1053,7 +1060,7 @@
                     <p>MsikaOnline is committed to complying with the General Data Protection Regulation (GDPR) for our users in the European Union.</p>
                 </div>
                 <div class="text-center mt-5">
-                    <a href="#" class="btn btn-malawi" id="backToHomeGDPR">Back to Home</a>
+                    <a href="#home" class="btn btn-malawi policy-link" aria-label="Back to home">Back to Home</a>
                 </div>
             </div>
         </section>
@@ -1093,7 +1100,7 @@
                             <li><a href="#">Electronics</a></li>
                             <li><a href="#">Clothing</a></li>
                             <li><a href="#">Vehicles</a></li>
-                            <li><a href="#">Agriculture</a></li>
+                            <li><a href="#">Jewelry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1139,7 +1146,7 @@
 
     <!-- Toast Notification Container -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3" aria-live="polite">
-        <div id="toastNotification" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="toastNotification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
             <div class="toast-header">
                 <strong class="me-auto">MsikaOnline</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -1148,12 +1155,14 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" onerror="this.src='/js/bootstrap.bundle.min.js'"></script>
     <script>
-        // Fallback for Bootstrap CSS and JS
-        if (!window.bootstrap) {
-            document.write('<link rel="stylesheet" href="/css/bootstrap.min.css">');
-            document.write('<script src="/js/bootstrap.bundle.min.js"><\/script>');
+        // Polyfill for URL.createObjectURL
+        if (!window.URL || !window.URL.createObjectURL) {
+            window.URL = window.URL || {};
+            window.URL.createObjectURL = function(obj) {
+                return obj;
+            };
         }
 
         // PWA Manifest
@@ -1190,8 +1199,19 @@
                     caches.open('msikaonline-v1').then((cache) => {
                         return cache.addAll([
                             '/',
+                            '/index.html',
                             '/images/icon-192.png',
                             '/images/icon-512.png',
+                            '/images/hero-bg.jpg',
+                            '/images/market.jpg',
+                            '/images/chair.jpg',
+                            '/images/basket.jpg',
+                            '/images/smartphone.jpg',
+                            '/images/jewelry.jpg',
+                            '/images/user1.jpg',
+                            '/images/user2.jpg',
+                            '/images/user3.jpg',
+                            '/images/mw-flag.png',
                             'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
                             'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js',
                             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
@@ -1203,8 +1223,17 @@
                 event.respondWith(
                     caches.match(event.request).then((response) => {
                         return response || fetch(event.request).catch(() => {
-                            return caches.match('/');
+                            return caches.match('/index.html');
                         });
+                    })
+                );
+            });
+            self.addEventListener('activate', (event) => {
+                event.waitUntil(
+                    caches.keys().then((cacheNames) => {
+                        return Promise.all(
+                            cacheNames.filter((name) => name !== 'msikaonline-v1').map((name) => caches.delete(name))
+                        );
                     })
                 );
             });
@@ -1240,6 +1269,27 @@
             return div.innerHTML;
         };
 
+        const validateField = (input, field) => {
+            if (!input) return false;
+            const errorElement = document.getElementById(`${field.id}Error`);
+            if (!errorElement) return false;
+
+            const value = sanitizeInput(input.value.trim());
+            if (!value) {
+                input.classList.add('is-invalid');
+                errorElement.textContent = `${field.label} is required`;
+                return false;
+            } else if (field.validate && !field.validate(value)) {
+                input.classList.add('is-invalid');
+                errorElement.textContent = field.errorMessage;
+                return false;
+            } else {
+                input.classList.remove('is-invalid');
+                errorElement.textContent = '';
+                return true;
+            }
+        };
+
         const validateForm = (formId, fields) => {
             const form = document.getElementById(formId);
             if (!form) return false;
@@ -1247,55 +1297,60 @@
             let isValid = true;
             fields.forEach(field => {
                 const input = form.querySelector(`#${field.id}`);
-                const errorElement = document.getElementById(`${field.id}Error`);
-                if (!input || !errorElement) return;
-
-                const value = sanitizeInput(input.value.trim());
-                if (!value) {
-                    isValid = false;
-                    input.classList.add('is-invalid');
-                    errorElement.textContent = `${field.label} is required`;
-                } else if (field.validate && !field.validate(value)) {
-                    isValid = false;
-                    input.classList.add('is-invalid');
-                    errorElement.textContent = field.errorMessage;
-                } else {
-                    input.classList.remove('is-invalid');
-                    errorElement.textContent = '';
-                }
+                if (!validateField(input, field)) isValid = false;
             });
             return isValid;
         };
 
-        // Image Preview
+        // Image Preview and Validation
         const handleImageUpload = () => {
             const imageUpload = document.getElementById('itemImages');
             const imagePreview = document.getElementById('imagePreview');
-            if (!imageUpload || !imagePreview) return;
+            const imageError = document.getElementById('itemImagesError');
+            if (!imageUpload || !imagePreview || !imageError) return;
 
             imageUpload.addEventListener('change', () => {
                 imagePreview.innerHTML = '';
-                if (imageUpload.files.length > 5) {
-                    showToast('Maximum 5 images allowed', 'danger');
+                imageError.textContent = '';
+                imageUpload.classList.remove('is-invalid');
+
+                const files = Array.from(imageUpload.files);
+                if (files.length > 5) {
+                    imageUpload.classList.add('is-invalid');
+                    imageError.textContent = 'Maximum 5 images allowed';
                     imageUpload.value = '';
+                    showToast('Maximum 5 images allowed', 'danger');
                     return;
                 }
 
-                Array.from(imageUpload.files).forEach(file => {
-                    if (file.type.match('image.*')) {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const img = document.createElement('img');
-                            img.src = e.target.result;
-                            img.classList.add('img-thumbnail');
-                            img.style.width = '80px';
-                            img.style.height = '80px';
-                            img.alt = 'Uploaded product image';
-                            imagePreview.appendChild(img);
-                        };
-                        reader.readAsDataURL(file);
+                for (const file of files) {
+                    if (!file.type.match('image.*')) {
+                        imageUpload.classList.add('is-invalid');
+                        imageError.textContent = 'Only image files are allowed';
+                        imageUpload.value = '';
+                        showToast('Only image files are allowed', 'danger');
+                        return;
                     }
-                });
+                    if (file.size > 5 * 1024 * 1024) {
+                        imageUpload.classList.add('is-invalid');
+                        imageError.textContent = 'Each image must be less than 5MB';
+                        imageUpload.value = '';
+                        showToast('Each image must be less than 5MB', 'danger');
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.classList.add('img-thumbnail');
+                        img.style.width = '80px';
+                        img.style.height = '80px';
+                        img.alt = 'Uploaded product image';
+                        imagePreview.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
             });
         };
 
@@ -1325,6 +1380,12 @@
             const html = document.getElementById('html-root');
             const toggleButton = document.getElementById('darkModeToggle');
             if (!html || !toggleButton) return;
+
+            const savedMode = localStorage.getItem('darkMode');
+            if (savedMode === 'enabled' || (!savedMode && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark-mode');
+                toggleButton.innerHTML = `<i class="fas fa-sun" aria-hidden="true"></i>`;
+            }
 
             toggleButton.addEventListener('click', () => {
                 html.classList.toggle('dark-mode');
@@ -1385,137 +1446,49 @@
             });
         };
 
-        // Form Handlers
+        // Policy Navigation
+        const handlePolicyNavigation = () => {
+            const policyLinks = document.querySelectorAll('.policy-link');
+            const mainSections = ['home', 'categories', 'browse', 'sell', 'about', 'testimonials'].map(id => document.getElementById(id));
+            const policySections = ['terms-of-service', 'privacy-policy', 'cookie-policy', 'gdpr-compliance'].map(id => document.getElementById(id));
+
+            policyLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        // Hide all sections
+                        mainSections.forEach(section => {
+                            if (section) section.classList.add('d-none');
+                        });
+                        policySections.forEach(section => {
+                            if (section) section.classList.add('d-none');
+                        });
+
+                        // Show target section
+                        targetSection.classList.remove('d-none');
+
+                        // If navigating to home, show all main sections
+                        if (targetId === 'home') {
+                            mainSections.forEach(section => {
+                                if (section) section.classList.remove('d-none');
+                            });
+                        }
+
+                        // Smooth scroll to target
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        };
+
+        // Form Handlers with Real-Time Validation
         const handleForms = () => {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const phoneRegex = /^\+?\d{10,}$/;
-            const priceRegex = /^\d+(\.\d{1,2})?$/;
-            const codeRegex = /^\d{6}$/;
-
-            const loginForm = document.getElementById('loginForm');
-            if (loginForm) {
-                loginForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (validateForm('loginForm', [
-                        {
-                            id: 'loginEmail',
-                            label: 'Email or Phone',
-                            validate: (value) => emailRegex.test(value) || phoneRegex.test(value),
-                            errorMessage: 'Please enter a valid email or phone number'
-                        },
-                        { id: 'loginPassword', label: 'Password' }
-                    ])) {
-                        showToast('Login successful!');
-                        loginForm.reset();
-                    }
-                });
-            }
-
-            const registerForm = document.getElementById('registerForm');
-            if (registerForm) {
-                registerForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const fields = [
-                        { id: 'registerName', label: 'Full Name' },
-                        {
-                            id: 'registerEmail',
-                            label: 'Email',
-                            validate: (value) => emailRegex.test(value),
-                            errorMessage: 'Please enter a valid email address'
-                        },
-                        {
-                            id: 'registerPhone',
-                            label: 'Phone Number',
-                            validate: (value) => phoneRegex.test(value),
-                            errorMessage: 'Please enter a valid phone number'
-                        },
-                        {
-                            id: 'registerPassword',
-                            label: 'Password',
-                            validate: (value) => value.length >= 8,
-                            errorMessage: 'Password must be at least 8 characters'
-                        },
-                        { id: 'registerConfirmPassword', label: 'Confirm Password' }
-                    ];
-                    if (!validateForm('registerForm', fields)) return;
-
-                    const password = sanitizeInput(document.getElementById('registerPassword')?.value);
-                    const confirmPassword = sanitizeInput(document.getElementById('registerConfirmPassword')?.value);
-                    if (password !== confirmPassword) {
-                        const errorElement = document.getElementById('registerConfirmPasswordError');
-                        if (errorElement) {
-                            errorElement.textContent = 'Passwords do not match';
-                            document.getElementById('registerConfirmPassword')?.classList.add('is-invalid');
-                        }
-                        return;
-                    }
-
-                    const verificationModal = new bootstrap.Modal(document.getElementById('verificationModal'));
-                    const userEmail = document.getElementById('userEmail');
-                    if (userEmail) {
-                        userEmail.textContent = sanitizeInput(document.getElementById('registerEmail')?.value || 'user@example.com');
-                    }
-                    verificationModal.show();
-                });
-            }
-
-            const verificationForm = document.getElementById('verificationForm');
-            if (verificationForm) {
-                verificationForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (validateForm('verificationForm', [
-                        {
-                            id: 'verificationCode',
-                            label: 'Verification Code',
-                            validate: (value) => codeRegex.test(value),
-                            errorMessage: 'Please enter a valid 6-digit code'
-                        }
-                    ])) {
-                        showToast('Account verified successfully!');
-                        const verificationModal = bootstrap.Modal.getInstance(document.getElementById('verificationModal'));
-                        verificationModal?.hide();
-                        const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                        registerModal?.hide();
-                    }
-                });
-            }
-
-            const sellForm = document.getElementById('sellForm');
-            if (sellForm) {
-                sellForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    if (validateForm('sellForm', [
-                        { id: 'itemName', label: 'Item Name' },
-                        { id: 'itemDescription', label: 'Description' },
-                        { id: 'itemCategory', label: 'Category' },
-                        {
-                            id: 'itemPrice',
-                            label: 'Price',
-                            validate: (value) => priceRegex.test(value) && Number(value) > 0,
-                            errorMessage: 'Please enter a valid price greater than 0'
-                        },
-                        { id: 'itemLocation', label: 'Location' },
-                        {
-                            id: 'itemImages',
-                            label: 'Images',
-                            validate: () => document.getElementById('itemImages').files.length > 0,
-                            errorMessage: 'At least one image is required'
-                        }
-                    ])) {
-                        showToast('Item listed successfully!');
-                        sellForm.reset();
-                        const imagePreview = document.getElementById('imagePreview');
-                        if (imagePreview) imagePreview.innerHTML = '';
-                    }
-                });
-            }
-        };
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!window.bootstrap) {
-                console.error('Bootstrap not loaded');
-                return;
-            }
-
-            handleImageUpload();
+            const priceRegex = /^\d+(\.\d
