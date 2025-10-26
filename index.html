@@ -31,7 +31,6 @@
     <title>MsikaOnline - Malawi's Premier Marketplace</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preload" href="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" as="image">
     <style>
         :root {
@@ -367,54 +366,6 @@
             margin-top: 2rem;
         }
 
-        .policy-container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 3rem;
-            margin: 3rem auto;
-        }
-
-        .policy-header {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .policy-section {
-            margin-bottom: 2.5rem;
-        }
-
-        .policy-section h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .policy-section h2::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-
-        .policy-section h3 {
-            color: var(--dark-color);
-            margin: 1.5rem 0 1rem;
-        }
-
-        .policy-list {
-            padding-left: 1.5rem;
-        }
-
-        .policy-list li {
-            margin-bottom: 0.5rem;
-        }
-
         .cookie-banner {
             position: fixed;
             bottom: 0;
@@ -461,13 +412,16 @@
             .section-title {
                 font-size: 1.8rem;
             }
-            .policy-container {
-                padding: 1.5rem;
-                margin: 1.5rem auto;
-            }
             .navbar-nav {
                 background-color: var(--dark-color);
                 padding: 1rem;
+            }
+            .product-card .card-img-top {
+                height: 150px;
+            }
+            .cookie-banner .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -477,7 +431,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="#" aria-label="MsikaOnline Home">
-                <i class="fas fa-store me-2"></i>MsikaOnline
+                <i class="fas fa-store me-2" aria-hidden="true"></i>MsikaOnline
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -485,23 +439,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home" aria-current="page"><i class="fas fa-home me-1"></i> Home</a>
+                        <a class="nav-link" href="#home" aria-current="page"><i class="fas fa-home me-1" aria-hidden="true"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#categories"><i class="fas fa-list me-1"></i> Categories</a>
+                        <a class="nav-link" href="#categories"><i class="fas fa-list me-1" aria-hidden="true"></i> Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#sell"><i class="fas fa-tag me-1"></i> Sell</a>
+                        <a class="nav-link" href="#sell"><i class="fas fa-tag me-1" aria-hidden="true"></i> Sell</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about"><i class="fas fa-info-circle me-1"></i> About</a>
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle me-1" aria-hidden="true"></i> About</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
                     <input type="search" class="form-control me-2" id="productSearch" placeholder="Search products..." aria-label="Search products">
                     <div class="dropdown me-2">
                         <button class="btn btn-outline-light dropdown-toggle" type="button" id="currencyDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-money-bill-wave me-1"></i> MWK
+                            <i class="fas fa-money-bill-wave me-1" aria-hidden="true"></i> MWK
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">MWK - Malawi Kwacha</a></li>
@@ -510,21 +464,21 @@
                         </ul>
                     </div>
                     <button class="btn btn-outline-light me-2" id="darkModeToggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
                     </button>
                     <a href="#chat" class="btn btn-outline-light me-2 position-relative" aria-label="Messages">
-                        <i class="fas fa-comments"></i>
+                        <i class="fas fa-comments" aria-hidden="true"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
                     </a>
                     <div class="dropdown">
                         <button class="btn btn-outline-light dropdown-toggle" type="button" id="authDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user me-1"></i> Account
+                            <i class="fas fa-user me-1" aria-hidden="true"></i> Account
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt me-2"></i>Login</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-user-plus me-2"></i>Register</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt me-2" aria-hidden="true"></i>Login</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fas fa-user-plus me-2" aria-hidden="true"></i>Register</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle me-2"></i>Help</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle me-2" aria-hidden="true"></i>Help</a></li>
                         </ul>
                     </div>
                 </div>
@@ -533,7 +487,7 @@
     </nav>
 
     <!-- Cookie Consent Banner -->
-    <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner" id="cookieBanner" role="alert">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
@@ -554,14 +508,14 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h1 class="hero-title animate__animated animate__fadeInDown">Malawi's Premier Marketplace</h1>
-                        <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">Buy and sell with trusted local sellers. Secure payments with MPamba, Airtel Money, and bank transfers.</p>
-                        <div class="d-flex gap-3 animate__animated animate__fadeIn animate__delay-1-5s">
-                            <a href="#sell" class="btn btn-malawi"><i class="fas fa-tag me-2"></i>Sell Now</a>
-                            <a href="#browse" class="btn btn-outline-malawi"><i class="fas fa-search me-2"></i>Browse Items</a>
+                        <h1 class="hero-title">Malawi's Premier Marketplace</h1>
+                        <p class="hero-subtitle">Buy and sell with trusted local sellers. Secure payments with MPamba, Airtel Money, and bank transfers.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#sell" class="btn btn-malawi"><i class="fas fa-tag me-2" aria-hidden="true"></i>Sell Now</a>
+                            <a href="#browse" class="btn btn-outline-malawi"><i class="fas fa-search me-2" aria-hidden="true"></i>Browse Items</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="col-lg-6 d-none d-lg-block">
                         <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Malawi Market" class="img-fluid rounded shadow-lg animate-float" loading="lazy">
                     </div>
                 </div>
@@ -569,16 +523,16 @@
         </header>
 
         <!-- Categories Section -->
-        <section class="py-5 bg-white" id="categories">
+        <section class="py-5 bg-white" id="categories" role="region" aria-labelledby="categories-title">
             <div class="container">
-                <h2 class="section-title">Popular Categories</h2>
+                <h2 class="section-title" id="categories-title">Popular Categories</h2>
                 <div class="row g-4">
                     <div class="col-md-3 col-6">
                         <a href="#" class="text-decoration-none" aria-label="Furniture category">
                             <div class="card category-card h-100 border-0 shadow-sm animate-pop">
                                 <div class="card-body text-center">
                                     <div class="icon-circle bg-primary bg-opacity-10 text-primary mb-3 mx-auto">
-                                        <i class="fas fa-couch fa-2x"></i>
+                                        <i class="fas fa-couch fa-2x" aria-hidden="true"></i>
                                     </div>
                                     <h5 class="mb-0">Furniture</h5>
                                 </div>
@@ -590,7 +544,7 @@
                             <div class="card category-card h-100 border-0 shadow-sm animate-pop">
                                 <div class="card-body text-center">
                                     <div class="icon-circle bg-success bg-opacity-10 text-success mb-3 mx-auto">
-                                        <i class="fas fa-mobile-alt fa-2x"></i>
+                                        <i class="fas fa-mobile-alt fa-2x" aria-hidden="true"></i>
                                     </div>
                                     <h5 class="mb-0">Electronics</h5>
                                 </div>
@@ -602,7 +556,7 @@
                             <div class="card category-card h-100 border-0 shadow-sm animate-pop">
                                 <div class="card-body text-center">
                                     <div class="icon-circle bg-danger bg-opacity-10 text-danger mb-3 mx-auto">
-                                        <i class="fas fa-tshirt fa-2x"></i>
+                                        <i class="fas fa-tshirt fa-2x" aria-hidden="true"></i>
                                     </div>
                                     <h5 class="mb-0">Clothing</h5>
                                 </div>
@@ -614,7 +568,7 @@
                             <div class="card category-card h-100 border-0 shadow-sm animate-pop">
                                 <div class="card-body text-center">
                                     <div class="icon-circle bg-warning bg-opacity-10 text-warning mb-3 mx-auto">
-                                        <i class="fas fa-car fa-2x"></i>
+                                        <i class="fas fa-car fa-2x" aria-hidden="true"></i>
                                     </div>
                                     <h5 class="mb-0">Vehicles</h5>
                                 </div>
@@ -626,10 +580,10 @@
         </section>
 
         <!-- Featured Products -->
-        <section class="py-5 bg-light" id="browse">
+        <section class="py-5 bg-light" id="browse" role="region" aria-labelledby="browse-title">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-center mb-5">
-                    <h2 class="section-title">Featured Products</h2>
+                    <h2 class="section-title" id="browse-title">Featured Products</h2>
                     <div class="d-flex gap-3">
                         <select class="form-select w-auto" id="categoryFilter" aria-label="Filter by category">
                             <option value="">All Categories</option>
@@ -638,7 +592,7 @@
                             <option value="clothing">Clothing</option>
                             <option value="vehicles">Vehicles</option>
                         </select>
-                        <a href="#" class="btn btn-outline-malawi">View All <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#" class="btn btn-outline-malawi">View All <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="row g-4" id="productList">
@@ -648,10 +602,10 @@
                             <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Handcrafted Wooden Chair" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Handcrafted Wooden Chair</h5>
-                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1"></i> Lilongwe</p>
+                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Lilongwe</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h6 class="price mb-0">MK 25,000</h6>
-                                    <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+                                    <span class="rating"><i class="fas fa-star" aria-hidden="true"></i> 4.5</span>
                                 </div>
                             </div>
                             <div class="card-footer bg-white border-0">
@@ -664,10 +618,10 @@
                             <img src="https://images.unsplash.com/photo-1517848568502-d03fa74e1964?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Traditional Malawi Basket" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Traditional Malawi Basket</h5>
-                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1"></i> Blantyre</p>
+                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Blantyre</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h6 class="price mb-0">MK 8,500</h6>
-                                    <span class="rating"><i class="fas fa-star"></i> 4.2</span>
+                                    <span class="rating"><i class="fas fa-star" aria-hidden="true"></i> 4.2</span>
                                 </div>
                             </div>
                             <div class="card-footer bg-white border-0">
@@ -681,10 +635,10 @@
                             <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Second-hand Smartphone" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Second-hand Smartphone</h5>
-                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1"></i> Mzuzu</p>
+                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Mzuzu</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h6 class="price mb-0">MK 120,000</h6>
-                                    <span class="rating"><i class="fas fa-star"></i> 4.0</span>
+                                    <span class="rating"><i class="fas fa-star" aria-hidden="true"></i> 4.0</span>
                                 </div>
                             </div>
                             <div class="card-footer bg-white border-0">
@@ -697,10 +651,10 @@
                             <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Handmade Jewelry Set" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">Handmade Jewelry Set</h5>
-                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1"></i> Zomba</p>
+                                <p class="location text-muted"><i class="fas fa-map-marker-alt me-1" aria-hidden="true"></i> Zomba</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h6 class="price mb-0">MK 15,000</h6>
-                                    <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                                    <span class="rating"><i class="fas fa-star" aria-hidden="true"></i> 4.7</span>
                                 </div>
                             </div>
                             <div class="card-footer bg-white border-0">
@@ -713,13 +667,13 @@
         </section>
 
         <!-- Sell Section -->
-        <section class="py-5 bg-white" id="sell">
+        <section class="py-5 bg-white" id="sell" role="region" aria-labelledby="sell-title">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="card auth-card">
                             <div class="card-header">
-                                <h4 class="mb-0"><i class="fas fa-tag me-2"></i>Sell Your Item</h4>
+                                <h4 class="mb-0" id="sell-title"><i class="fas fa-tag me-2" aria-hidden="true"></i>Sell Your Item</h4>
                             </div>
                             <div class="card-body">
                                 <form id="sellForm" enctype="multipart/form-data">
@@ -807,19 +761,19 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="py-5 bg-light">
+        <section class="py-5 bg-light" role="region" aria-labelledby="testimonials-title">
             <div class="container">
-                <h2 class="section-title text-center mb-5">What Our Users Say</h2>
+                <h2 class="section-title text-center mb-5" id="testimonials-title">What Our Users Say</h2>
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="mb-3 text-warning">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <p class="card-text">"MsikaOnline helped me sell my furniture quickly and safely. The payment process was secure and I received my money instantly through MPamba."</p>
                                 <div class="d-flex align-items-center mt-3">
@@ -836,11 +790,11 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="mb-3 text-warning">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                                 </div>
                                 <p class="card-text">"I found exactly what I was looking for at a great price. The seller was verified and the transaction was smooth. Will definitely use again!"</p>
                                 <div class="d-flex align-items-center mt-3">
@@ -857,11 +811,11 @@
                         <div class="card h-100 border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="mb-3 text-warning">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
+                                    <i class="fas fa-star" aria-hidden="true"></i>
                                 </div>
                                 <p class="card-text">"As a small business owner, MsikaOnline has been invaluable for reaching customers across Malawi. The verification system builds trust with buyers."</p>
                                 <div class="d-flex align-items-center mt-3">
@@ -883,7 +837,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-success text-white">
-                        <h5 class="modal-title" id="loginModalLabel"><i class="fas fa-sign-in-alt me-2"></i>Login</h5>
+                        <h5 class="modal-title" id="loginModalLabel"><i class="fas fa-sign-in-alt me-2" aria-hidden="true"></i>Login</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -920,7 +874,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-success text-white">
-                        <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus me-2"></i>Register</h5>
+                        <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus me-2" aria-hidden="true"></i>Register</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -973,12 +927,12 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-success text-white">
-                        <h5 class="modal-title" id="verificationModalLabel"><i class="fas fa-shield-alt me-2"></i>Account Verification</h5>
+                        <h5 class="modal-title" id="verificationModalLabel"><i class="fas fa-shield-alt me-2" aria-hidden="true"></i>Account Verification</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="text-center mb-4">
-                            <i class="fas fa-envelope fa-4x text-success mb-3"></i>
+                            <i class="fas fa-envelope fa-4x text-success mb-3" aria-hidden="true"></i>
                             <h4>Verify Your Email</h4>
                             <p>We've sent a verification code to <strong id="userEmail">user@example.com</strong></p>
                         </div>
@@ -999,43 +953,15 @@
         </div>
 
         <!-- Terms of Service Section -->
-        <section id="terms-of-service" class="py-5 bg-light" style="display: none;">
-            <div class="container policy-container">
+        <section id="terms-of-service" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="terms-title">
+            <div class="container">
                 <div class="policy-header">
-                    <h1>Terms of Service</h1>
+                    <h1 id="terms-title">Terms of Service</h1>
                     <p class="text-muted">Last updated: April 19, 2025</p>
                 </div>
                 <div class="policy-section">
                     <h2>1. Introduction</h2>
                     <p>Welcome to MsikaOnline ("we," "our," or "us"). These Terms of Service ("Terms") govern your use of our website and services. By accessing or using MsikaOnline, you agree to comply with these Terms. If you disagree with any part, you may not access the service.</p>
-                </div>
-                <div class="policy-section">
-                    <h2>2. User Accounts</h2>
-                    <p>To use certain features, you must register for an account. You agree to:</p>
-                    <ul class="policy-list">
-                        <li>Provide accurate and complete information</li>
-                        <li>Maintain the security of your password</li>
-                        <li>Be responsible for all activities under your account</li>
-                        <li>Not create accounts for others without permission</li>
-                    </ul>
-                </div>
-                <div class="policy-section">
-                    <h2>3. Buying and Selling</h2>
-                    <h3>3.1 Seller Responsibilities</h3>
-                    <p>Sellers must:</p>
-                    <ul class="policy-list">
-                        <li>Provide accurate descriptions of items</li>
-                        <li>Honor the price listed</li>
-                        <li>Ship items promptly after payment</li>
-                        <li>Comply with all applicable laws</li>
-                    </ul>
-                    <h3>3.2 Buyer Responsibilities</h3>
-                    <p>Buyers must:</p>
-                    <ul class="policy-list">
-                        <li>Pay for items promptly</li>
-                        <li>Inspect items upon receipt</li>
-                        <li>Report any issues within 7 days</li>
-                    </ul>
                 </div>
                 <div class="text-center mt-5">
                     <a href="#" class="btn btn-malawi" id="backToHome">Back to Home</a>
@@ -1044,10 +970,10 @@
         </section>
 
         <!-- Privacy Policy Section -->
-        <section id="privacy-policy" class="py-5 bg-light" style="display: none;">
-            <div class="container policy-container">
+        <section id="privacy-policy" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="privacy-title">
+            <div class="container">
                 <div class="policy-header">
-                    <h1>Privacy Policy</h1>
+                    <h1 id="privacy-title">Privacy Policy</h1>
                     <p class="text-muted">Last updated: April 19, 2025</p>
                 </div>
                 <div class="policy-section">
@@ -1056,8 +982,6 @@
                     <ul class="policy-list">
                         <li><strong>Personal Information:</strong> Name, email, phone number, address when you register or transact</li>
                         <li><strong>Transaction Data:</strong> Details of purchases and sales</li>
-                        <li><strong>Usage Data:</strong> How you interact with our website</li>
-                        <li><strong>Device Information:</strong> IP address, browser type, operating system</li>
                     </ul>
                 </div>
                 <div class="text-center mt-5">
@@ -1067,10 +991,10 @@
         </section>
 
         <!-- Cookie Policy Section -->
-        <section id="cookie-policy" class="py-5 bg-light" style="display: none;">
-            <div class="container policy-container">
+        <section id="cookie-policy" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="cookie-title">
+            <div class="container">
                 <div class="policy-header">
-                    <h1>Cookie Policy</h1>
+                    <h1 id="cookie-title">Cookie Policy</h1>
                     <p class="text-muted">Last updated: April 19, 2025</p>
                 </div>
                 <div class="policy-section">
@@ -1084,10 +1008,10 @@
         </section>
 
         <!-- GDPR Compliance Section -->
-        <section id="gdpr-compliance" class="py-5 bg-light" style="display: none;">
-            <div class="container policy-container">
+        <section id="gdpr-compliance" class="py-5 bg-light" style="display: none;" role="region" aria-labelledby="gdpr-title">
+            <div class="container">
                 <div class="policy-header">
-                    <h1>GDPR Compliance Statement</h1>
+                    <h1 id="gdpr-title">GDPR Compliance Statement</h1>
                     <p class="text-muted">Last updated: April 19, 2025</p>
                 </div>
                 <div class="policy-section">
@@ -1109,10 +1033,10 @@
                     <div class="footer-logo">MsikaOnline</div>
                     <p>Malawi's trusted marketplace connecting buyers and sellers nationwide.</p>
                     <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
@@ -1203,12 +1127,12 @@
             "theme_color": "#289e47",
             "icons": [
                 {
-                    "src": "https://via.placeholder.com/192",
+                    "src": "/images/icon-192.png",
                     "sizes": "192x192",
                     "type": "image/png"
                 },
                 {
-                    "src": "https://via.placeholder.com/512",
+                    "src": "/images/icon-512.png",
                     "sizes": "512x512",
                     "type": "image/png"
                 }
@@ -1226,18 +1150,18 @@
                     caches.open('msikaonline-v1').then((cache) => {
                         return cache.addAll([
                             '/',
-                            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
-                            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-                            'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
-                            'https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'
-                        ]);
+                            '/images/icon-192.png',
+                            '/images/icon-512.png'
+                        ]).catch((err) => console.error('Cache add failed:', err));
                     })
                 );
             });
             self.addEventListener('fetch', (event) => {
                 event.respondWith(
                     caches.match(event.request).then((response) => {
-                        return response || fetch(event.request);
+                        return response || fetch(event.request).catch(() => {
+                            return caches.match('/');
+                        });
                     })
                 );
             });
@@ -1246,15 +1170,19 @@
         const swURL = URL.createObjectURL(swBlob);
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register(swURL);
+                navigator.serviceWorker.register(swURL).catch((err) => {
+                    console.error('Service Worker registration failed:', err);
+                });
             });
         }
 
         // Utility Functions
         const showToast = (message, type = 'success') => {
             const toast = document.getElementById('toastNotification');
+            if (!toast) return;
             const toastBody = toast.querySelector('.toast-body');
             toastBody.textContent = message;
+            toast.classList.remove('bg-success', 'bg-danger');
             toast.classList.add(`bg-${type}`);
             const bsToast = new bootstrap.Toast(toast);
             bsToast.show();
@@ -1273,13 +1201,15 @@
             let isValid = true;
             fields.forEach(field => {
                 const input = form.querySelector(`#${field.id}`);
+                const errorElement = document.getElementById(`${field.id}Error`);
+                if (!input || !errorElement) return;
                 if (!input.value.trim()) {
                     isValid = false;
                     input.classList.add('is-invalid');
-                    document.getElementById(`${field.id}Error`).textContent = `${field.label} is required`;
+                    errorElement.textContent = `${field.label} is required`;
                 } else {
                     input.classList.remove('is-invalid');
-                    document.getElementById(`${field.id}Error`).textContent = '';
+                    errorElement.textContent = '';
                 }
             });
             return isValid;
@@ -1339,13 +1269,16 @@
         };
 
         // Dark Mode Toggle
-        const toggleDarkMode = () => {
+        const handleDarkMode = () => {
             const html = document.getElementById('html-root');
             const toggleButton = document.getElementById('darkModeToggle');
-            html.classList.toggle('dark-mode');
-            const isDark = html.classList.contains('dark-mode');
-            toggleButton.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i>`;
-            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            if (!html || !toggleButton) return;
+            toggleButton.addEventListener('click', () => {
+                html.classList.toggle('dark-mode');
+                const isDark = html.classList.contains('dark-mode');
+                toggleButton.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
+                localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            });
         };
 
         // Product Search and Filter
@@ -1361,7 +1294,9 @@
                 const products = productList.querySelectorAll('.col-md-6');
 
                 products.forEach(product => {
-                    const title = product.querySelector('.card-title').textContent.toLowerCase();
+                    const titleElement = product.querySelector('.card-title');
+                    if (!titleElement) return;
+                    const title = titleElement.textContent.toLowerCase();
                     const productCategory = product.dataset.category;
                     const matchesSearch = !searchTerm || title.includes(searchTerm);
                     const matchesCategory = !category || productCategory === category;
@@ -1378,6 +1313,7 @@
             const cookieBanner = document.getElementById('cookieBanner');
             const cookieAccept = document.getElementById('cookieAccept');
             const cookieDecline = document.getElementById('cookieDecline');
+            if (!cookieBanner || !cookieAccept || !cookieDecline) return;
 
             if (!localStorage.getItem('cookieConsent')) {
                 cookieBanner.classList.add('show');
@@ -1425,8 +1361,8 @@
                     ];
                     if (!validateForm('registerForm', fields)) return;
 
-                    const password = document.getElementById('registerPassword').value;
-                    const confirmPassword = document.getElementById('registerConfirmPassword').value;
+                    const password = document.getElementById('registerPassword')?.value;
+                    const confirmPassword = document.getElementById('registerConfirmPassword')?.value;
                     if (password !== confirmPassword) {
                         showToast('Passwords do not match', 'danger');
                         return;
@@ -1434,7 +1370,9 @@
 
                     const verificationModal = new bootstrap.Modal(document.getElementById('verificationModal'));
                     const userEmail = document.getElementById('userEmail');
-                    userEmail.textContent = sanitizeInput(document.getElementById('registerEmail').value);
+                    if (userEmail) {
+                        userEmail.textContent = sanitizeInput(document.getElementById('registerEmail')?.value || 'user@example.com');
+                    }
                     verificationModal.show();
                 });
             }
@@ -1448,9 +1386,9 @@
                     ])) {
                         showToast('Account verified successfully!');
                         const verificationModal = bootstrap.Modal.getInstance(document.getElementById('verificationModal'));
-                        verificationModal.hide();
+                        verificationModal?.hide();
                         const registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-                        registerModal.hide();
+                        registerModal?.hide();
                     }
                 });
             }
@@ -1469,7 +1407,8 @@
                     ])) {
                         showToast('Item listed successfully!');
                         sellForm.reset();
-                        document.getElementById('imagePreview').innerHTML = '';
+                        const imagePreview = document.getElementById('imagePreview');
+                        if (imagePreview) imagePreview.innerHTML = '';
                     }
                 });
             }
@@ -1506,13 +1445,16 @@
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
                     document.querySelectorAll('section[id]').forEach(section => {
-                        section.style.display = 'none';
+                        section.style.display = section.id === targetId.slice(1) ? 'block' : 'none';
                     });
-                    document.querySelector(targetId).style.display = 'block';
-                    window.scrollTo({
-                        top: document.querySelector(targetId).offsetTop - 70,
-                        behavior: 'smooth'
-                    });
+                    document.querySelector('header').style.display = 'none';
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
 
@@ -1521,16 +1463,9 @@
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
                     document.querySelectorAll('section[id]').forEach(section => {
-                        section.style.display = 'none';
+                        section.style.display = ['home', 'categories', 'browse', 'sell'].includes(section.id) ? 'block' : 'none';
                     });
-                    document.querySelectorAll('header, section').forEach(element => {
-                        if (!element.id.startsWith('terms-of-service') &&
-                            !element.id.startsWith('privacy-policy') &&
-                            !element.id.startsWith('cookie-policy') &&
-                            !element.id.startsWith('gdpr-compliance')) {
-                            element.style.display = 'block';
-                        }
-                    });
+                    document.querySelector('header').style.display = 'block';
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
@@ -1540,8 +1475,12 @@
 
             // Initialize dark mode
             if (localStorage.getItem('darkMode') === 'enabled' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.getElementById('html-root').classList.add('dark-mode');
-                document.getElementById('darkModeToggle').innerHTML = '<i class="fas fa-sun"></i>';
+                const html = document.getElementById('html-root');
+                const toggleButton = document.getElementById('darkModeToggle');
+                if (html && toggleButton) {
+                    html.classList.add('dark-mode');
+                    toggleButton.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+                }
             }
         });
     </script>
